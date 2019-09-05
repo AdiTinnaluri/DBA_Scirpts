@@ -1,0 +1,1638 @@
+Set Oracle Database Env
+
+Directory created.
+
+==================
+Schemas expdp
+==============
+/app/oracle/product/11.2.0.4
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:12:49 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_SCHEMA_01":  "/******** AS SYSDBA" schemas=obiy2_MDS directory=PART_DIR dumpfile=expdp_obiy2_MDS_051918.dmp logfile=expdp_OBIobiy2_MDS_051918.log COMPRESSION=ALL 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 7.625 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TYPE/TYPE_SPEC
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/RLS_POLICY/RLS_POLICY
+Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY
+. . exported "OBIY2_MDS"."MDS_ATTRIBUTES"                386.5 KB   35697 rows
+. . exported "OBIY2_MDS"."MDS_COMPONENTS"                272.4 KB   32313 rows
+. . exported "OBIY2_MDS"."MDS_PATHS"                     95.46 KB    2315 rows
+. . exported "OBIY2_MDS"."MDS_TRANSACTIONS"              24.48 KB    2416 rows
+. . exported "OBIY2_MDS"."MDS_DEPL_LINEAGES"             5.226 KB       2 rows
+. . exported "OBIY2_MDS"."MDS_LABELS"                    5.734 KB       8 rows
+. . exported "OBIY2_MDS"."MDS_NAMESPACES"                5.515 KB      27 rows
+. . exported "OBIY2_MDS"."MDS_PARTITIONS"                5.117 KB       4 rows
+. . exported "OBIY2_MDS"."MDS_TXN_LOCKS"                 4.812 KB       3 rows
+. . exported "OBIY2_MDS"."MDS_DEPENDENCIES"                  0 KB       0 rows
+. . exported "OBIY2_MDS"."MDS_LARGE_ATTRIBUTES"              0 KB       0 rows
+. . exported "OBIY2_MDS"."MDS_METADATA_DOCS"                 0 KB       0 rows
+. . exported "OBIY2_MDS"."MDS_SANDBOXES"                     0 KB       0 rows
+. . exported "OBIY2_MDS"."MDS_STREAMED_DOCS"                 0 KB       0 rows
+Master table "SYS"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_SCHEMA_01 is:
+  /obibkp/obiy2/expdp/expdp_obiy2_MDS_051918.dmp
+Job "SYS"."SYS_EXPORT_SCHEMA_01" successfully completed at Sat May 19 14:14:41 2018 elapsed 0 00:01:39
+
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:14:46 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_SCHEMA_01":  "/******** AS SYSDBA" schemas=obiy2_BIPLATFORM directory=PART_DIR dumpfile=expdp_obiy2_BIPLATFORM_051918.dmp logfile=expdp_OBIobiy2_BIPLATFORM_051918.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 3.125 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION
+Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE
+Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION
+Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/VIEW/VIEW
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/TRIGGER
+. . exported "OBIY2_BIPLATFORM"."XMLP_SCHED_JOB"         31.32 KB       5 rows
+. . exported "OBIY2_BIPLATFORM"."SDTOPOLOGY"             7.093 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."XMLP_SCHED_DATA"        27.99 KB       4 rows
+. . exported "OBIY2_BIPLATFORM"."XMLP_SCHED_DELIVERY"    10.85 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."XMLP_SCHED_OUTPUT"      13.73 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."HSS_COMPONENT"          7.414 KB       9 rows
+. . exported "OBIY2_BIPLATFORM"."HSS_COMPONENT_LINKS"    6.898 KB      12 rows
+. . exported "OBIY2_BIPLATFORM"."HSS_COMPONENT_PROPERTY_VALUES"  10.17 KB      52 rows
+. . exported "OBIY2_BIPLATFORM"."HSS_COMPONENT_TYPES"    9.757 KB     136 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_LOCKS"             5.109 KB       5 rows
+. . exported "OBIY2_BIPLATFORM"."RTDSNAPSHOTSCHEMAVERSION"  5.468 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."SCORECARD_REGISTRY"     5.453 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."SDSCHEMAVERSION"        5.460 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."SDSTRINGS"              5.453 KB       1 rows
+. . exported "OBIY2_BIPLATFORM"."SEQUENCE"               5.554 KB       4 rows
+. . exported "OBIY2_BIPLATFORM"."XMLP_APPINFO"           5.898 KB       2 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOTATIONS"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_CONTEXTS"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENTS"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENT_GROUP1"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENT_GROUP2"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENT_GROUP3"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENT_GROUPS"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENT_SETS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ANNOT_ELEMENT_VALUES"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ASSESSMENT_OVERRIDES"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRCACHEEVENTS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRCOMPONENTS"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRCONFIG"              0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRDEPLOYDETAILS"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRDEPLOYEDVIEW"        0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRDEPLOYVIEW"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRFOLDERS"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRFUNCTIONS"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGROBJECTACCESS"        0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGROBJECTLINKS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRRULES"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRSEQUENCES"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRSHORTCUTS"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRTEMPLATES"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRUSERS"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRUSERSETTINGS"        0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CALCMGRVARIABLES"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_ALIAS"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_ALIASSET"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_AUTHORITY"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_CATEGORY"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_CLASS"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_CONNECTION"              0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_DATAPOINT"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_DATASET"                 0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_DOMAIN"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_EXPRESSION"              0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_FACT"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_FACTSET"                 0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_FOLDER"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_FORM"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_GROUP"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_HIERARCHY"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_INSTANCE"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_LOGICALELEMENT"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_LOGININFO"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_MEMBER"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_IDS"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_BINARY"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_BOOLEAN"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_CATEGORICAL"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_DATE"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_DATEPERIOD"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_DATETIME"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_ID"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_INTEGER"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_LONG"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_NUMBER"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_PROPERTIES_STRING"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_NONE_TRANSACTIONS"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_PACKAGE"                 0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_REFERENCE"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_ROLE"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_RULE"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_SCHEMA"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_SERVER_KEY"              0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_SOURCE"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_SOURCECOMPONENT"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_TWIN"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_TWINSET"                 0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_UNIT"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."CP_USER"                    0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ESS_FAILOVER_LEASE"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ESS_FAILOVER_LEASE_OWNER"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."ESS_FAILOVER_RESOURCE"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."FR_SCHEDULER_DATA"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."HSS_COMPONENT_FILES"        0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."HSS_COMPONENT_TIERS"        0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_BLOB_TRIGGERS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_CALENDARS"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_CRON_TRIGGERS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_FIRED_TRIGGERS"        0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_JOB_DETAILS"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_JOB_LISTENERS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_PAUSED_TRIGGER_GRPS"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_SCHEDULER_STATE"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_SIMPLE_TRIGGERS"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_TRIGGERS"              0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."QRTZ_TRIGGER_LISTENERS"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDAPP"                     0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDATTRIBUTE"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDCHOICE"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDCHOICEGROUP"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDCORRELATION"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDCUMULATIVEGAINS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDEVENT"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDMODEL"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDMODELINSTANCE"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDPARTITION"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDPREDICTIVENESS"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."RTDSTUDY"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDAPPLOCKS"                 0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDAPPS"                     0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDCHOICEHISTORY"            0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDCHOICEHISTORYLENGTH"      0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDCLEANUPLIST1"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDCLEANUPLIST2"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDCONFIG"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDDCSESSIONSTORE"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDDEPLOYMENTSTATES"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDLEARNING1"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDLEARNING2"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDLEARNINGMAPPING"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDLEARNINGMODELS"           0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDLEARNINGSTORAGE"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDMODELARCHIVE"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDPREDICTIONMODELS"         0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDSESSIONREF"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDSTATISTICS"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."SDSTUDIES"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_ACCT"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_DB_ACCT"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_EPT"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_ERR_MSG"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_INITBLOCK"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_INSTANCE"              0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_JOB"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_JOB_PARAM"             0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."S_NQ_SUMMARY_ADVISOR"       0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_GROUP"                  0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_IDENTITY"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_IDENTITY_XREF"          0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_PROPERTY"               0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_ROLE"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_SUBJECT"                0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_USER"                   0 KB       0 rows
+. . exported "OBIY2_BIPLATFORM"."WKS_VERSION"                0 KB       0 rows
+Master table "SYS"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_SCHEMA_01 is:
+  /obibkp/obiy2/expdp/expdp_obiy2_BIPLATFORM_051918.dmp
+Job "SYS"."SYS_EXPORT_SCHEMA_01" successfully completed at Sat May 19 14:15:22 2018 elapsed 0 00:00:36
+
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:15:23 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_SCHEMA_01":  "/******** AS SYSDBA" schemas=FBI_BIA_ODIREPO directory=PART_DIR dumpfile=expdp_obiy2_FBI_BIA_ODIREPO_051918.dmp logfile=expdp_obiy2_FBI_BIA_ODIREPO_051918.log COMPRESSION=ALL 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 164.3 GB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type SCHEMA_EXPORT/POST_SCHEMA/PROCOBJ
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_TASK"           769.4 MB  589039 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_TASK_LOG"       143.4 MB  565608 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SCEN_TASK"           373.4 MB  417167 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_STEP_REPORT"         246.7 MB 22600496 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TXT_HEADER"          314.0 MB 1156895 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_STEP_LV"        7.108 MB  980534 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_EXP_TXT_HEADER"      20.59 MB  199102 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESSION"             4.357 MB   33622 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SCEN_REPORT"         55.74 MB 5304545 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FF_VALUEW"           34.09 MB 7257268 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_STEP"           2.131 MB  149322 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_VAR_SESS"            1.411 MB  248400 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_STEP_LOG"        587.3 KB   53658 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_COL"                 27.40 MB 1426289 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_STEP_LOG"            1.056 MB  145784 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_STEP_VAR"        872.4 KB  122513 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PARAM_SESS"          290.0 KB   64973 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_VAR_LOG"         711.6 KB   74714 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_STEP"            1.190 MB   88669 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TXT_CROSSR"          22.32 MB 1685582 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_VAR"             1.675 MB   15998 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_POP_COL"             11.82 MB  690095 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LP_VAR"              5.648 MB   81506 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_POP_MAPPING"         4.384 MB  703620 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_VAR_SCEN"            1.894 MB  238070 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LP_STEP"             1.501 MB   71720 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_STEP"                1.625 MB   57380 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SOURCE_TAB"          1.442 MB   68819 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_RUN"             31.15 KB     193 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SCEN_STEP"           1.027 MB   59153 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_KEY_COL"             559.5 KB  102859 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_POP_CLAUSE"          1023. KB   70887 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_STEP_LOG_09082016"  673.0 KB   11838 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_KEY"                 654.2 KB   62620 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_POP"                 1.083 MB   28115 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_DIAGRAM"             688.8 KB   49711 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LP_STEP_VAR"         436.5 KB   50979 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESSION_09082016"    457.7 KB    2055 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TABLE"               526.0 KB   17283 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SCEN"                385.6 KB   13418 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_DATA_SET"            179.8 KB   32242 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FOLDER"              225.0 KB   12624 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_JOIN"                151.8 KB    7649 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PACKAGE"             287.8 KB   12615 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MTXT"                109.7 KB    3473 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_CONV_DT"               111 KB   34131 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_JOIN_COL"            64.58 KB    7691 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_DATA"                458.7 KB       2 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OBJ_STATE"           100.7 KB   17305 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOAD_PLAN"           52.16 KB    3538 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SRC_SET"             66.37 KB   10652 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_UE_USED"             67.80 KB   16188 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_RUN_09082016"    30.88 KB      13 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_CONNECT"             8.312 KB      16 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LINE_TRT"            40.20 KB    1443 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_VAR_PLAN_AGENT"      20.10 KB    2142 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SEQUENCE"            19.99 KB    1048 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SEQ_SCEN"            5.585 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SEQ_SESS"            5.617 KB       3 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_VAR_DATA"            11.73 KB     499 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_DT"                  19.18 KB     780 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FIELD"               30.54 KB    1267 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LANG_ELT"            19.88 KB     828 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LE_TECHNO"           25.25 KB    2293 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LP_INST"             8.218 KB     185 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PROF_METH"           9.312 KB    1647 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_TASK_LS"        5.687 KB      75 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_VAR"                 27.34 KB    1018 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ACTION"              6.515 KB      64 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_AGENT"               6.187 KB       3 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_AGENT_PROP"          4.953 KB       2 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_AGENT_PROP_LST"      4.976 KB       2 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ALLOC_AGENT"         5.445 KB       6 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_COND"                6.226 KB       6 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_CONNECT_PROP"        4.945 KB       3 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_CONTEXT"             5.718 KB       2 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ENTITY"              8.968 KB      90 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ENT_ID"              5.046 KB       9 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FF_VALUEM"           6.093 KB     133 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FIELD_LOOKUP"        10.44 KB     577 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FLEX_FIELD"          8.804 KB      86 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_GRP_ACTION"          5.945 KB      10 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_GRP_STATE"           6.031 KB       5 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ID"                  5.265 KB      30 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_IMPORT_REP"          4.976 KB      20 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_INDEX_TYPE"           6.75 KB      68 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_INDIRECT_MREF"       8.476 KB     766 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LAGENT"              5.406 KB       3 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LANG"                5.843 KB       6 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LANG_TECHNO"         5.812 KB      48 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LB_AGENT"            4.843 KB       4 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LICENSE"             5.968 KB      66 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LINE_ACTION"         7.054 KB      85 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LINE_TRT_UE"         7.281 KB     644 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LINK"                7.851 KB     218 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOCK"                5.421 KB     190 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOC_REP"             6.101 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOC_REPW"            5.734 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LSCHEMA"             6.734 KB      80 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_METHOD"              13.01 KB     492 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MISSING_REF"         8.695 KB     166 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MODEL"               11.10 KB      71 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MODULE"              5.195 KB       5 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MOD_FOLDER"          6.328 KB      29 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_M_IMPORT_REP"        4.945 KB      11 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OBJECT"              7.742 KB      96 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OBJECT_ID"           6.226 KB     332 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OBJECT_ID_COL"       7.179 KB     449 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OBJ_TRACE"           9.109 KB     459 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PLAN_AGENT"          7.414 KB      14 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_POP_CONSTRAINT"      5.289 KB      18 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PROFILE"             5.625 KB      14 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PROJECT"             5.679 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PSCHEMA"             7.710 KB      15 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PSCHEMA_CONT"        5.734 KB      32 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PWD_POLICY"          5.109 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PWD_RULE"            5.109 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REM_REP"             5.453 KB       1 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SCEN_FOLDER"         6.460 KB      42 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_STATE2"              8.242 KB      91 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SUB_LANG"            6.031 KB      31 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SUB_MODEL"           17.12 KB     697 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TECHNO"              14.16 KB      56 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TRT"                 11.82 KB     157 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_UFUNC"               11.67 KB     282 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_UFUNC_IMPL"          7.710 KB     402 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_UFUNC_TECHNO"        10.18 KB    1678 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER"                7.523 KB      39 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER_BKP_08222016"   6.031 KB       4 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER_EXIT"           24.04 KB     712 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER_PROF"           5.992 KB     128 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_VERSION"              5.75 KB       2 rows
+. . exported "FBI_BIA_ODIREPO"."WID_CORR_LOG"            5.468 KB     330 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_DATASOURCE"              0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_DIAG_PARAM"              0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ESS"                     0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_EXP_TXT"                 0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_FF_VALUEE"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_HIST_VERSION"            0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_HOST"                    0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_HOST_MOD"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_INST_OBJ"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LINK_COORD"              0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LINK_DIAG"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOCKED_OBJECT"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOOKUP"                  0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LOOKUP_VALUE"            0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_EC_VAR_LOG"          0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_EXC_LOG"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_LPI_TXT_LOG"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MORIG_TXT"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_MTXT_PART"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OBJ_DIAG"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_OPEN_TOOL"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_ORIG_TXT"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PARAM_LPI_RUN"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_PARTITION"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_POP_CONTEXT"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_COL"                 0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_COL_FFV"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_COND"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_COND_FFV"            0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_FOR_TABLE"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_JOIN"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_JOIN_COL"            0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_JOIN_FFV"            0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_KEY"                 0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_KEY_COL"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_KEY_FFV"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_MODEL_FFV"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_PARTITION"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_SUB_MODEL"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_TABLE"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_REV_TABLE_FFV"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SCEN_TXT"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SEQ_DATA"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_FOLDER"             0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SESS_TXT_LOG"            0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SOLUTION"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_SOL_ELT"                 0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_STATE"                   0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TASK_TXT"                0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_TXT"                     0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_UE_ORIG"                 0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER_METH"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER_OBJ_METH"           0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_USER_PREF"               0 KB       0 rows
+. . exported "FBI_BIA_ODIREPO"."SNP_U_O_M_REP"               0 KB       0 rows
+Master table "SYS"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_SCHEMA_01 is:
+  /obibkp/obiy2/expdp/expdp_obiy2_FBI_BIA_ODIREPO_051918.dmp
+Job "SYS"."SYS_EXPORT_SCHEMA_01" successfully completed at Sat May 19 14:30:59 2018 elapsed 0 00:15:35
+
+==================
+tables expdp
+==================
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:31:00 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+ORA-39001: invalid argument value
+ORA-39000: bad dump file specification
+ORA-31641: unable to create dump file "/obibkp/obiy2/expdp/expdp_SCHEMA_VERSION_REGISTRY_051918.dmp"
+ORA-27038: created file already exists
+Additional information: 1
+
+
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:31:03 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=FBI_DW.W_LOCALIZED_STRING_G directory=PART_DIR dumpfile=expdp_W_LOCALIZED_STRING_G_051918.dmp logfile=expdp_W_LOCALIZED_STRING_G_051918.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 18 MB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "FBI_DW"."W_LOCALIZED_STRING_G"             15.44 MB   89712 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /obibkp/obiy2/expdp/expdp_W_LOCALIZED_STRING_G_051918.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Sat May 19 14:31:11 2018 elapsed 0 00:00:06
+
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:31:11 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=FBI_DW.WC_SECURITY_G directory=PART_DIR dumpfile=expdp_WC_SECURITY_G_051918.dmp logfile=expdp_WC_SECURITY_G_051918.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 2 MB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "FBI_DW"."WC_SECURITY_G"                    1.344 MB   14234 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /obibkp/obiy2/expdp/expdp_WC_SECURITY_G_051918.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Sat May 19 14:39:41 2018 elapsed 0 00:08:29
+
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:39:41 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=TREC.TREC_STATUS_MAIL_USERS directory=PART_DIR dumpfile=expdp_exp_TREC_STATUS_MAIL_USERS_051918.dmp logfile=expdp_TREC_STATUS_MAIL_USERS_051918.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 128 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "TREC"."TREC_STATUS_MAIL_USERS"             5.851 KB       1 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /obibkp/obiy2/expdp/expdp_exp_TREC_STATUS_MAIL_USERS_051918.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Sat May 19 14:39:48 2018 elapsed 0 00:00:04
+
+
+Export: Release 11.2.0.4.0 - Production on Sat May 19 14:39:48 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=STG.RPNA_STATUS_MAIL_USERS directory=PART_DIR dumpfile=expdp_RPNA_STATUS_MAIL_USERS_051918.dmp logfile=expdp_RPNA_STATUS_MAIL_USERS_051918.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 128 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "STG"."RPNA_STATUS_MAIL_USERS"              6.335 KB       1 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /obibkp/obiy2/expdp/expdp_RPNA_STATUS_MAIL_USERS_051918.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Sat May 19 14:39:53 2018 elapsed 0 00:00:04
+
+SEND MAIL TO STAKE HOLDERS
+=======
+Null message body; hope that's ok
+Export completed at Sat19May2018
+
+Directory created.
+
+==================
+Schemas expdp
+==============
+/app/oracle/product/11.2.0.4
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:18:46 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_SCHEMA_01":  "/******** AS SYSDBA" schemas=obid1_MDS directory=PART_DIR dumpfile=expdp_obid1_MDS_290518_101846.dmp logfile=expdp_OBIobid1_MDS_290518_101846.log COMPRESSION=ALL 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 6.5 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TYPE/TYPE_SPEC
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/RLS_POLICY/RLS_POLICY
+Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/USER_PREF_STATISTICS
+. . exported "OBID1_MDS"."MDS_ATTRIBUTES"                315.0 KB   30039 rows
+. . exported "OBID1_MDS"."MDS_COMPONENTS"                238.2 KB   28980 rows
+. . exported "OBID1_MDS"."MDS_PATHS"                     92.28 KB    2224 rows
+. . exported "OBID1_MDS"."MDS_DEPL_LINEAGES"             5.234 KB       2 rows
+. . exported "OBID1_MDS"."MDS_LABELS"                    5.554 KB       4 rows
+. . exported "OBID1_MDS"."MDS_NAMESPACES"                5.539 KB      27 rows
+. . exported "OBID1_MDS"."MDS_PARTITIONS"                5.093 KB       4 rows
+. . exported "OBID1_MDS"."MDS_TRANSACTIONS"              9.453 KB     552 rows
+. . exported "OBID1_MDS"."MDS_TXN_LOCKS"                 4.796 KB       3 rows
+. . exported "OBID1_MDS"."MDS_DEPENDENCIES"                  0 KB       0 rows
+. . exported "OBID1_MDS"."MDS_LARGE_ATTRIBUTES"              0 KB       0 rows
+. . exported "OBID1_MDS"."MDS_METADATA_DOCS"                 0 KB       0 rows
+. . exported "OBID1_MDS"."MDS_SANDBOXES"                     0 KB       0 rows
+. . exported "OBID1_MDS"."MDS_STREAMED_DOCS"                 0 KB       0 rows
+Master table "SYS"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_SCHEMA_01 is:
+  /backup/obid1/expdp/expdp_obid1_MDS_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_SCHEMA_01" successfully completed at Tue May 29 10:19:09 2018 elapsed 0 00:00:22
+
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:19:09 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_SCHEMA_01":  "/******** AS SYSDBA" schemas=obid1_BIPLATFORM directory=PART_DIR dumpfile=expdp_obid1_BIPLATFORM_290518_101846.dmp logfile=expdp_OBIobid1_BIPLATFORM_290518_101846.log COMPRESSION=ALL 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 45.56 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION
+Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE
+Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC
+Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION
+Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/VIEW/VIEW
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/TRIGGER
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "OBID1_BIPLATFORM"."XMLP_SCHED_DATA"        9.716 MB    1272 rows
+. . exported "OBID1_BIPLATFORM"."XMLP_SCHED_JOB"         857.3 KB    1222 rows
+. . exported "OBID1_BIPLATFORM"."XMLP_SCHED_DELIVERY"    495.0 KB     603 rows
+. . exported "OBID1_BIPLATFORM"."XMLP_SCHED_OUTPUT"      421.1 KB     606 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_JOB_DETAILS"        6.75 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_TRIGGERS"          5.867 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."SDTOPOLOGY"             5.351 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."HSS_COMPONENT_TYPES"    6.421 KB     136 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_CRON_TRIGGERS"     5.039 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_LOCKS"             4.757 KB       5 rows
+. . exported "OBID1_BIPLATFORM"."RTDSNAPSHOTSCHEMAVERSION"  4.796 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."SCORECARD_REGISTRY"     4.789 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."SDSCHEMAVERSION"        4.781 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."SDSTRINGS"              4.796 KB       1 rows
+. . exported "OBID1_BIPLATFORM"."SEQUENCE"               4.859 KB       4 rows
+. . exported "OBID1_BIPLATFORM"."XMLP_APPINFO"           4.914 KB       2 rows
+. . exported "OBID1_BIPLATFORM"."ANNOTATIONS"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_CONTEXTS"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENTS"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENT_GROUP1"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENT_GROUP2"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENT_GROUP3"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENT_GROUPS"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENT_SETS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ANNOT_ELEMENT_VALUES"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ASSESSMENT_OVERRIDES"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRCACHEEVENTS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRCOMPONENTS"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRCONFIG"              0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRDEPLOYDETAILS"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRDEPLOYEDVIEW"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRDEPLOYVIEW"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRFOLDERS"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRFUNCTIONS"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGROBJECTACCESS"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGROBJECTLINKS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRRULES"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRSEQUENCES"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRSHORTCUTS"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRTEMPLATES"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRUSERS"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRUSERSETTINGS"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CALCMGRVARIABLES"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_ALIAS"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_ALIASSET"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_AUTHORITY"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_CATEGORY"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_CLASS"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_CONNECTION"              0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_DATAPOINT"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_DATASET"                 0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_DOMAIN"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_EXPRESSION"              0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_FACT"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_FACTSET"                 0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_FOLDER"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_FORM"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_GROUP"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_HIERARCHY"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_INSTANCE"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_LOGICALELEMENT"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_LOGININFO"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_MEMBER"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_IDS"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_BINARY"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_BOOLEAN"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_CATEGORICAL"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_DATE"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_DATEPERIOD"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_DATETIME"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_ID"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_INTEGER"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_LONG"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_NUMBER"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_PROPERTIES_STRING"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_NONE_TRANSACTIONS"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_PACKAGE"                 0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_REFERENCE"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_ROLE"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_RULE"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_SCHEMA"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_SERVER_KEY"              0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_SOURCE"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_SOURCECOMPONENT"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_TWIN"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_TWINSET"                 0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_UNIT"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."CP_USER"                    0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ESS_FAILOVER_LEASE"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ESS_FAILOVER_LEASE_OWNER"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."ESS_FAILOVER_RESOURCE"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."FR_SCHEDULER_DATA"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."HSS_COMPONENT"              0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."HSS_COMPONENT_FILES"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."HSS_COMPONENT_LINKS"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."HSS_COMPONENT_PROPERTY_VALUES"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."HSS_COMPONENT_TIERS"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_BLOB_TRIGGERS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_CALENDARS"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_FIRED_TRIGGERS"        0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_JOB_LISTENERS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_PAUSED_TRIGGER_GRPS"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_SCHEDULER_STATE"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_SIMPLE_TRIGGERS"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."QRTZ_TRIGGER_LISTENERS"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDAPP"                     0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDATTRIBUTE"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDCHOICE"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDCHOICEGROUP"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDCORRELATION"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDCUMULATIVEGAINS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDEVENT"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDMODEL"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDMODELINSTANCE"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDPARTITION"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDPREDICTIVENESS"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."RTDSTUDY"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDAPPLOCKS"                 0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDAPPS"                     0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDCHOICEHISTORY"            0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDCHOICEHISTORYLENGTH"      0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDCLEANUPLIST1"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDCLEANUPLIST2"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDCONFIG"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDDCSESSIONSTORE"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDDEPLOYMENTSTATES"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDLEARNING1"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDLEARNING2"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDLEARNINGMAPPING"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDLEARNINGMODELS"           0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDLEARNINGSTORAGE"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDMODELARCHIVE"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDPREDICTIONMODELS"         0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDSESSIONREF"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDSTATISTICS"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."SDSTUDIES"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_ACCT"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_DB_ACCT"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_EPT"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_ERR_MSG"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_INITBLOCK"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_INSTANCE"              0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_JOB"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_JOB_PARAM"             0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."S_NQ_SUMMARY_ADVISOR"       0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_GROUP"                  0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_IDENTITY"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_IDENTITY_XREF"          0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_PROPERTY"               0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_ROLE"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_SUBJECT"                0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_USER"                   0 KB       0 rows
+. . exported "OBID1_BIPLATFORM"."WKS_VERSION"                0 KB       0 rows
+Master table "SYS"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_SCHEMA_01 is:
+  /backup/obid1/expdp/expdp_obid1_BIPLATFORM_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_SCHEMA_01" successfully completed at Tue May 29 10:19:47 2018 elapsed 0 00:00:37
+
+==================
+tables expdp
+==================
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:19:47 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" tables=SYSTEM.SCHEMA_VERSION_REGISTRY$ directory=PART_DIR dumpfile=expdp_SCHEMA_VERSION_REGISTRY_290518_101846.dmp logfile=expdp_SCHEMA_VERSION_REGISTRY_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 64 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/PRE_TABLE_ACTION
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "SYSTEM"."SCHEMA_VERSION_REGISTRY$"         10.79 KB       8 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /backup/obid1/expdp/expdp_SCHEMA_VERSION_REGISTRY_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Tue May 29 10:19:51 2018 elapsed 0 00:00:03
+
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:19:52 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=FBI_DW.W_LOCALIZED_STRING_G directory=PART_DIR dumpfile=expdp_W_LOCALIZED_STRING_G_290518_101846.dmp logfile=expdp_W_LOCALIZED_STRING_G_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 3 MB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "FBI_DW"."W_LOCALIZED_STRING_G"             2.218 MB   12816 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /backup/obid1/expdp/expdp_W_LOCALIZED_STRING_G_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Tue May 29 10:19:56 2018 elapsed 0 00:00:03
+
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:19:57 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=FBI_DW.WC_SECURITY_G directory=PART_DIR dumpfile=expdp_WC_SECURITY_G_290518_101846.dmp logfile=expdp_WC_SECURITY_G_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 2 MB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "FBI_DW"."WC_SECURITY_G"                    1.312 MB   13950 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /backup/obid1/expdp/expdp_WC_SECURITY_G_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Tue May 29 10:30:26 2018 elapsed 0 00:10:28
+
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:30:27 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=TREC.TREC_STATUS_MAIL_USERS directory=PART_DIR dumpfile=expdp_exp_TREC_STATUS_MAIL_USERS_290518_101846.dmp logfile=expdp_TREC_STATUS_MAIL_USERS_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 128 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "TREC"."TREC_STATUS_MAIL_USERS"             5.851 KB       1 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /backup/obid1/expdp/expdp_exp_TREC_STATUS_MAIL_USERS_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Tue May 29 10:30:30 2018 elapsed 0 00:00:03
+
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:30:31 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYS"."SYS_EXPORT_TABLE_01":  "/******** AS SYSDBA" TABLES=STG.RPNA_STATUS_MAIL_USERS directory=PART_DIR dumpfile=expdp_RPNA_STATUS_MAIL_USERS_290518_101846.dmp logfile=expdp_RPNA_STATUS_MAIL_USERS_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 128 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "STG"."RPNA_STATUS_MAIL_USERS"              6.328 KB       1 rows
+Master table "SYS"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYS.SYS_EXPORT_TABLE_01 is:
+  /backup/obid1/expdp/expdp_RPNA_STATUS_MAIL_USERS_290518_101846.dmp
+Job "SYS"."SYS_EXPORT_TABLE_01" successfully completed at Tue May 29 10:30:34 2018 elapsed 0 00:00:03
+
+==================
+For OBID1 . Take below additional schema Backups
+==================
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:30:34 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/******** schemas=infm_9 directory=PART_DIR dumpfile=expdp_obid1_infm_9_290518_101846.dmp logfile=expdp_infm_9_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 2.692 GB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/VIEW/VIEW
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "INFM_9"."OPB_PERF_COUNT"                   1.699 GB 31039808 rows
+. . exported "INFM_9"."OPB_WIDGET_FIELD"                 126.4 MB 2071557 rows
+. . exported "INFM_9"."OPB_SRC_FLD"                      62.87 MB  684383 rows
+. . exported "INFM_9"."OPB_WIDGET_ATTR"                  43.15 MB  665249 rows
+. . exported "INFM_9"."OPB_WIDGET_DEP"                   41.66 MB 1788024 rows
+. . exported "INFM_9"."OPB_WFLOW_VAR"                    29.97 MB  254988 rows
+. . exported "INFM_9"."OPB_EXPRESSION"                   28.69 MB  570548 rows
+. . exported "INFM_9"."OPB_TASK_ATTR"                    26.02 MB  701139 rows
+. . exported "INFM_9"."OPB_TARG_FLD"                     22.82 MB  281080 rows
+. . exported "INFM_9"."OPB_VERSION_PROPS"                22.74 MB  154684 rows
+. . exported "INFM_9"."OPB_SWIDGET_INST"                 19.08 MB  195779 rows
+. . exported "INFM_9"."OPB_PICDSC"                       17.17 MB  684383 rows
+. . exported "INFM_9"."OPB_WIDGET_EXPR"                  13.12 MB  572264 rows
+. . exported "INFM_9"."OPB_SWIDGET_ATTR"                 12.01 MB   31593 rows
+. . exported "INFM_9"."OPB_WIDGET"                       12.73 MB   75766 rows
+. . exported "INFM_9"."OPB_WIDGET_INST"                  8.801 MB  131503 rows
+. . exported "INFM_9"."OPB_EXTN_ATTR"                    7.370 MB  164310 rows
+. . exported "INFM_9"."ISP_RUN_LOG"                      2.369 MB    7365 rows
+. . exported "INFM_9"."OPB_TASK"                         5.056 MB   38741 rows
+. . exported "INFM_9"."OPB_COMPONENT"                    3.606 MB  123135 rows
+. . exported "INFM_9"."OPB_MAPPING"                      3.747 MB   18068 rows
+. . exported "INFM_9"."OPB_SESS_CNX_REFS"                3.308 MB   71162 rows
+. . exported "INFM_9"."OPB_SESS_CNX_VALS"                3.036 MB   71162 rows
+. . exported "INFM_9"."OPB_SESS_EXTNS"                   2.785 MB  109746 rows
+. . exported "INFM_9"."PR_ATTRIBUTE"                     3.333 MB   49344 rows
+. . exported "INFM_9"."OPB_CM_LABEL_REF"                 2.180 MB   51455 rows
+. . exported "INFM_9"."OPB_MAP_PARMVAR"                  1.770 MB   24436 rows
+. . exported "INFM_9"."OPB_MAP_TARG_INFO"                2.162 MB   94792 rows
+. . exported "INFM_9"."OPB_METAEXT_VAL"                  2.512 MB   20682 rows
+. . exported "INFM_9"."OPB_PARTITION_DEF"                1.669 MB   31404 rows
+. . exported "INFM_9"."OPB_SRC"                          2.230 MB   11971 rows
+. . exported "INFM_9"."OPB_WIDG_FLD_ATTR"                2.348 MB   70105 rows
+. . exported "INFM_9"."PO_HOSTUSAGE"                     752.7 KB    2426 rows
+. . exported "INFM_9"."PO_DOMAINUSAGE"                   625.8 KB    2426 rows
+. . exported "INFM_9"."OPB_SCHEDULER"                    1.155 MB   11382 rows
+. . exported "INFM_9"."OPB_TARG"                         1.074 MB    6558 rows
+. . exported "INFM_9"."OPB_TASK_INST"                    1.652 MB   25886 rows
+. . exported "INFM_9"."PR_RESOURCE"                      1.108 MB    4943 rows
+. . exported "INFM_9"."PC_ORMSTATE"                      1.060 MB       2 rows
+. . exported "INFM_9"."PO_IDOBJ"                         17.89 KB      32 rows
+. . exported "INFM_9"."PO_PROCESS"                       14.88 KB       3 rows
+. . exported "INFM_9"."PO_LDAPOPTIONS"                   11.85 KB       1 rows
+. . exported "INFM_9"."PO_DOMAINOBJ"                     13.28 KB       6 rows
+. . exported "INFM_9"."OPB_WFLOW_EXPR"                   532.5 KB   15073 rows
+. . exported "INFM_9"."OPB_DBD"                          481.5 KB   11971 rows
+. . exported "INFM_9"."PL_SERVICES_LICENSEHOSTSE"        256.9 KB    3639 rows
+. . exported "INFM_9"."PO_NODERESOURCE"                  23.83 KB      82 rows
+. . exported "INFM_9"."PO_SMTPOPTIONS"                   8.671 KB       1 rows
+. . exported "INFM_9"."OPB_CFG_ATTR"                     402.7 KB   12098 rows
+. . exported "INFM_9"."OPB_WFLOW_DEP"                    392.6 KB   15073 rows
+. . exported "INFM_9"."OPB_WORKFLOW"                     402.8 KB   11531 rows
+. . exported "INFM_9"."PO_LICENSEHOSTSERVICES"           238.8 KB    2426 rows
+. . exported "INFM_9"."OPB_DBDS"                         352.1 KB   22951 rows
+. . exported "INFM_9"."OPB_SESSION"                      382.7 KB   13680 rows
+. . exported "INFM_9"."PO_LICENSEUSAGE"                  12.94 KB       2 rows
+. . exported "INFM_9"."PO_OPTION"                        19.13 KB     139 rows
+. . exported "INFM_9"."PO_SERVICEREF"                    7.906 KB       1 rows
+. . exported "INFM_9"."OPB_FILE_DESC"                    331.1 KB    4433 rows
+. . exported "INFM_9"."OPB_SELINFO"                      299.5 KB   11971 rows
+. . exported "INFM_9"."PC_DBRCONFIG"                     6.078 KB       2 rows
+. . exported "INFM_9"."PO_LOGSERVICEPROCESS"             7.437 KB       1 rows
+. . exported "INFM_9"."PO_PRIVILEGE"                     22.67 KB     306 rows
+. . exported "INFM_9"."PO_SERVICEPROCESSSTARTUPS"        8.140 KB       3 rows
+. . exported "INFM_9"."OPB_TDS"                          206.3 KB   11636 rows
+. . exported "INFM_9"."OPB_NORM_FLD"                     162.4 KB    2170 rows
+. . exported "INFM_9"."OPB_WFLD_INOUTDEP"                160.6 KB    6477 rows
+. . exported "INFM_9"."PC_AUDITLOG"                      8.328 KB       2 rows
+. . exported "INFM_9"."PL_CHILDRENPRIVILEGEIDS_P"        7.523 KB      32 rows
+. . exported "INFM_9"."PL_KEYS_LICENSE"                  8.718 KB       1 rows
+. . exported "INFM_9"."PL_ROLES_DOMAINPRIVILEGE"         6.085 KB       3 rows
+. . exported "INFM_9"."PL_SERVICENAMES_LICENSE"          6.101 KB       2 rows
+. . exported "INFM_9"."PO_DOMAINSERVICECONFIG"           7.796 KB       1 rows
+. . exported "INFM_9"."PO_LINKEDDOMAINSTORAGE"           7.351 KB       1 rows
+. . exported "INFM_9"."PO_LOGSERVICECONFIGURATIO"        7.812 KB       1 rows
+. . exported "INFM_9"."PO_LOGSERVICEOPTIONS"             7.820 KB       1 rows
+. . exported "INFM_9"."PO_MPPROJECT"                     9.960 KB       1 rows
+. . exported "INFM_9"."PO_NODEADDRESS"                   7.820 KB       1 rows
+. . exported "INFM_9"."PO_OPTIONGROUP"                   8.125 KB      10 rows
+. . exported "INFM_9"."PO_SERVICEPRIVILEGEDEF"           7.687 KB      14 rows
+. . exported "INFM_9"."PO_SERVICESTARTUPSTATE"           7.984 KB       3 rows
+. . exported "INFM_9"."PO_STOREDSTARTUPSTATE"            7.351 KB       1 rows
+. . exported "INFM_9"."PO_UMSERVICECONFIG"               9.218 KB       1 rows
+. . exported "INFM_9"."PO_USERINFO"                      8.882 KB       6 rows
+. . exported "INFM_9"."OPB_MMD_CNX_ATTR"                 126.6 KB     817 rows
+. . exported "INFM_9"."OPB_MMD_DATATYPE"                 89.25 KB    2185 rows
+. . exported "INFM_9"."OPB_MMD_EXTN_ATTR"                85.60 KB     477 rows
+. . exported "INFM_9"."OPB_SESS_FILE_VALS"               108.4 KB    1209 rows
+. . exported "INFM_9"."OPB_SESS_TASK_LOG"                82.72 KB     124 rows
+. . exported "INFM_9"."OPB_TASK_INST_RUN"                126.8 KB     296 rows
+. . exported "INFM_9"."OPB_USER_GROUP"                   74.54 KB    1261 rows
+. . exported "INFM_9"."ISP_MASTER_ELECTION"              7.257 KB       1 rows
+. . exported "INFM_9"."ISP_MASTER_ELECT_LOCK"            5.492 KB       1 rows
+. . exported "INFM_9"."OPB_ATTR"                         41.14 KB     285 rows
+. . exported "INFM_9"."OPB_ATTR_CATEGORY"                5.984 KB       2 rows
+. . exported "INFM_9"."OPB_CM_LABEL"                     9.632 KB       1 rows
+. . exported "INFM_9"."OPB_CM_QUERY"                     9.265 KB       2 rows
+. . exported "INFM_9"."OPB_CM_QUERY_PARAM"               8.093 KB       8 rows
+. . exported "INFM_9"."OPB_CNX"                          13.70 KB      16 rows
+. . exported "INFM_9"."OPB_CNX_ATTR"                     18.02 KB     159 rows
+. . exported "INFM_9"."OPB_DTL_SWIDG_LOG"                17.21 KB      96 rows
+. . exported "INFM_9"."OPB_GROUPS"                       7.921 KB       2 rows
+. . exported "INFM_9"."OPB_MACRO"                        15.97 KB      27 rows
+. . exported "INFM_9"."OPB_MACRO_ARGS"                   8.671 KB      27 rows
+. . exported "INFM_9"."OPB_MACRO_EXPR"                   7.851 KB      27 rows
+. . exported "INFM_9"."OPB_MAP_PERSISVAL"                14.46 KB      77 rows
+. . exported "INFM_9"."OPB_MMD_CATALOG"                  13.47 KB      44 rows
+. . exported "INFM_9"."OPB_MMD_CATTR2EXTN"               6.789 KB       8 rows
+. . exported "INFM_9"."OPB_MMD_CATTR_VAL"                12.64 KB     219 rows
+. . exported "INFM_9"."OPB_MMD_CFGAT_VAL"                7.320 KB      24 rows
+. . exported "INFM_9"."OPB_MMD_CFG_ATTR"                    16 KB      42 rows
+. . exported "INFM_9"."OPB_MMD_CNX"                      10.12 KB      72 rows
+. . exported "INFM_9"."OPB_MMD_DBSUBTYPE"                8.312 KB      12 rows
+. . exported "INFM_9"."OPB_MMD_DBTY2WATTR"               7.601 KB      28 rows
+. . exported "INFM_9"."OPB_MMD_DBTY2WAVAL"               7.671 KB      33 rows
+. . exported "INFM_9"."OPB_MMD_DBTYP2EXTN"               9.046 KB     127 rows
+. . exported "INFM_9"."OPB_MMD_DBTYPE"                   14.65 KB      53 rows
+. . exported "INFM_9"."OPB_MMD_DOMAIN"                   16.36 KB      66 rows
+. . exported "INFM_9"."OPB_MMD_EATTR2CNX"                6.765 KB       7 rows
+. . exported "INFM_9"."OPB_MMD_EATTR_VAL"                12.68 KB     195 rows
+. . exported "INFM_9"."OPB_MMD_ECNXN_REF"                13.03 KB     216 rows
+. . exported "INFM_9"."OPB_MMD_EXTN_CNXN"                14.42 KB      95 rows
+. . exported "INFM_9"."OPB_MMD_EXTN_FILE"                6.281 KB       3 rows
+. . exported "INFM_9"."OPB_MMD_EXTN_WATTR"               7.945 KB      69 rows
+. . exported "INFM_9"."OPB_MMD_FLDATTR"                  19.01 KB     161 rows
+. . exported "INFM_9"."OPB_MMD_FUNCTION"                 7.484 KB      25 rows
+. . exported "INFM_9"."OPB_MMD_FUNC_GRP"                 7.101 KB       6 rows
+. . exported "INFM_9"."OPB_MMD_KEYTYPE"                  12.10 KB     167 rows
+. . exported "INFM_9"."OPB_MMD_LIBS"                     54.90 KB    1106 rows
+. . exported "INFM_9"."OPB_MMD_METAEXT"                  34.78 KB     327 rows
+. . exported "INFM_9"."OPB_MMD_PLGCOMP"                  18.40 KB     331 rows
+. . exported "INFM_9"."OPB_MMD_SESS_EXTNS"               16.99 KB     121 rows
+. . exported "INFM_9"."OPB_MMD_SLVL_ATTR"                8.992 KB       2 rows
+. . exported "INFM_9"."OPB_MMD_TASK_ATTR"                17.78 KB      70 rows
+. . exported "INFM_9"."OPB_MMD_TATTR_VAL"                7.367 KB      26 rows
+. . exported "INFM_9"."OPB_MMD_TEMPLATE"                 9.492 KB      36 rows
+. . exported "INFM_9"."OPB_MMD_TMPL2EXTN"                7.312 KB      32 rows
+. . exported "INFM_9"."OPB_MMD_TMPL_ATTR"                22.21 KB     401 rows
+. . exported "INFM_9"."OPB_OBJECT_ACCESS"                9.679 KB     129 rows
+. . exported "INFM_9"."OPB_OBJECT_TYPE"                  9.390 KB      93 rows
+. . exported "INFM_9"."OPB_PROXYUSER_INFO"               5.484 KB       7 rows
+. . exported "INFM_9"."OPB_REPOSIT"                      7.562 KB       2 rows
+. . exported "INFM_9"."OPB_REPOSIT_INFO"                 10.44 KB       1 rows
+. . exported "INFM_9"."OPB_REPO_PARAM"                   5.968 KB       3 rows
+. . exported "INFM_9"."OPB_ROLE"                         6.835 KB      30 rows
+. . exported "INFM_9"."OPB_RTSEQ"                        6.929 KB      57 rows
+. . exported "INFM_9"."OPB_SCHEMA_DEPLOY"                8.085 KB       2 rows
+. . exported "INFM_9"."OPB_SCHEMA_IDS"                   67.19 KB    1885 rows
+. . exported "INFM_9"."OPB_SERVER_INFO"                  10.58 KB       3 rows
+. . exported "INFM_9"."OPB_SERVICE_LEVEL"                8.320 KB       1 rows
+. . exported "INFM_9"."OPB_SESSION_CONFIG"               26.62 KB     101 rows
+. . exported "INFM_9"."OPB_SESS_FILE_REF"                55.98 KB    2808 rows
+. . exported "INFM_9"."OPB_SHORTCUT"                     16.17 KB       7 rows
+. . exported "INFM_9"."OPB_SLEVEL_ATTR"                  6.257 KB       2 rows
+. . exported "INFM_9"."OPB_SRV_LOC_VARS"                 8.367 KB      30 rows
+. . exported "INFM_9"."OPB_SUBJECT"                      16.51 KB      45 rows
+. . exported "INFM_9"."OPB_SWIDGINST_LOG"                79.12 KB     248 rows
+. . exported "INFM_9"."OPB_SWIDG_GROUP"                  21.86 KB     464 rows
+. . exported "INFM_9"."OPB_TABLE_GROUP"                  71.26 KB    1484 rows
+. . exported "INFM_9"."OPB_TARGINDEX"                    7.984 KB       4 rows
+. . exported "INFM_9"."OPB_TARGINDEXFLD"                 6.812 KB       6 rows
+. . exported "INFM_9"."OPB_TASK_RES_REFS"                10.82 KB      66 rows
+. . exported "INFM_9"."OPB_TASK_VAL_LIST"                14.94 KB      49 rows
+. . exported "INFM_9"."OPB_UPGRADE_HIST"                 6.398 KB       7 rows
+. . exported "INFM_9"."OPB_USERS"                        10.68 KB       2 rows
+. . exported "INFM_9"."OPB_USER_GROUPS"                  5.429 KB       2 rows
+. . exported "INFM_9"."OPB_VALIDATE"                     31.57 KB     272 rows
+. . exported "INFM_9"."OPB_WFLD_ATTR"                    9.554 KB      59 rows
+. . exported "INFM_9"."OPB_WFLD_ATTR_DEF"                9.187 KB       2 rows
+. . exported "INFM_9"."OPB_WFLOW_CACHE"                   8.25 KB      15 rows
+. . exported "INFM_9"."OPB_WFLOW_DEP_RUN"                11.54 KB     172 rows
+. . exported "INFM_9"."OPB_WFLOW_RUN"                    46.41 KB      76 rows
+. . exported "INFM_9"."OPB_WIDGET_INIT"                  16.64 KB     152 rows
+. . exported "INFM_9"."OPB_WIDG_MCR_DEP"                 10.21 KB      47 rows
+. . exported "INFM_9"."PC_DBOBJECT"                      17.38 KB      86 rows
+. . exported "INFM_9"."PC_ICLASS_SIG"                    21.57 KB     149 rows
+. . exported "INFM_9"."PC_NAMESPACE"                     9.171 KB       5 rows
+. . exported "INFM_9"."PC_PACKAGE"                       8.851 KB      23 rows
+. . exported "INFM_9"."PC_REPOSITORY"                    5.953 KB       1 rows
+. . exported "INFM_9"."PL_ACELIST_MACCESSCONTROL"        5.992 KB       1 rows
+. . exported "INFM_9"."PL_DOMAINOPTIONS_DOMAINSE"        6.007 KB       2 rows
+. . exported "INFM_9"."PL_LICENSESERVICESINFO_HO"        38.92 KB    2426 rows
+. . exported "INFM_9"."PL_NODEOPTIONS_NODE"                  6 KB       2 rows
+. . exported "INFM_9"."PL_OPTIONS_OPTIONGROUP"           7.851 KB     139 rows
+. . exported "INFM_9"."PL_OPTIONS_SERVICEREF"            5.992 KB       1 rows
+. . exported "INFM_9"."PL_PREDEFINERESOURCES_DOM"        6.117 KB      10 rows
+. . exported "INFM_9"."PL_PRIVILEGES_DOMAINPRIVI"        6.578 KB      44 rows
+. . exported "INFM_9"."PL_PRIVILEGES_SERVICEPRIV"        9.453 KB     262 rows
+. . exported "INFM_9"."PL_PROCESSOPTIONS_PROCESS"            6 KB       2 rows
+. . exported "INFM_9"."PL_PROCESSSTATES_STOREDST"        6.015 KB       3 rows
+. . exported "INFM_9"."PL_RESOURCE_DOMAINNODE"           6.960 KB      72 rows
+. . exported "INFM_9"."PL_SERVICEOPTIONS_APPLICA"        6.015 KB       3 rows
+. . exported "INFM_9"."PL_SERVICEPRIVILEGES_ROLE"        6.140 KB      14 rows
+. . exported "INFM_9"."PL_SERVICEPROCESSES_APPLI"        6.015 KB       3 rows
+. . exported "INFM_9"."PL_SERVICEPROCESSES_LOGSE"        5.992 KB       1 rows
+. . exported "INFM_9"."PL_SERVICEREFS_APPLICATIO"        5.992 KB       1 rows
+. . exported "INFM_9"."PL_SERVICESTATES_STOREDST"        6.015 KB       3 rows
+. . exported "INFM_9"."PL_USERREFS_GROUP"                6.046 KB       6 rows
+. . exported "INFM_9"."PO_FOLDER"                           12 KB      42 rows
+. . exported "INFM_9"."PO_MACCESSCONTROLENTRY"           9.570 KB       1 rows
+. . exported "INFM_9"."PO_MACCESSCONTROLLIST"            7.296 KB       1 rows
+. . exported "INFM_9"."PO_MPPROCESSEDDATAUPGRADE"        7.312 KB       1 rows
+. . exported "INFM_9"."PO_MPPROJECTGROUP"                8.179 KB       1 rows
+. . exported "INFM_9"."REP_CARD_TYPE"                    5.523 KB       5 rows
+. . exported "INFM_9"."REP_DB_TYPES"                     5.664 KB      16 rows
+. . exported "INFM_9"."REP_FLD_DATATYPE"                 13.28 KB     297 rows
+. . exported "INFM_9"."REP_PIC_USAGE"                    5.578 KB      11 rows
+. . exported "INFM_9"."REP_SRC_KEY_TYPES"                5.640 KB       9 rows
+. . exported "INFM_9"."REP_TARG_KEY_TYPES"               5.546 KB       5 rows
+. . exported "INFM_9"."REP_TARG_TYPE"                    5.468 KB       3 rows
+. . exported "INFM_9"."OPB_ANALYZE_DEP"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_ANALYZE_DEP_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_BCF_BUSCOMPS"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_BCF_BUSCOMPS_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_BCF_TREE"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_BCF_TREE_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_CFG_ATTR_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_CLIENT_CONN"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_CM_DEPDETAIL"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_CM_DEPLOY"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_CM_DEPLOY_LOG"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_CM_DEPLOY_REF"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_CNX_"                             0 KB       0 rows
+. . exported "INFM_9"."OPB_CNX_ATTR_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_COMPONENT_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_DBDS_"                            0 KB       0 rows
+. . exported "INFM_9"."OPB_DBD_"                             0 KB       0 rows
+. . exported "INFM_9"."OPB_DTL_SWIDG_LOG_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_EVENT"                            0 KB       0 rows
+. . exported "INFM_9"."OPB_EVENT_"                           0 KB       0 rows
+. . exported "INFM_9"."OPB_EXPRESSION_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_EXTN_ATTR_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_FILE_DESC_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_GEN_OBJECT"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_GEN_OBJ_REFS"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_HASH_KEY"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_HASH_KEY_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_KEYWORD"                          0 KB       0 rows
+. . exported "INFM_9"."OPB_KEYWORD_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_KEY_RANGE"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_KEY_RANGE_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_LINK_MCR_DEP"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_LINK_MCR_DEP_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MACRO_"                           0 KB       0 rows
+. . exported "INFM_9"."OPB_MACRO_ARGS_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_MACRO_EXPR_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_MACRO_REF"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_MACRO_REF_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_MAPPING_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_MAP_OPTIONS"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_MAP_OPTIONS_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_MAP_PARMVAR_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_MAP_PERSISVAL_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MAP_TARG_INFO_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_CUBE"                          0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_CUBE_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_CUBE_FIELD"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_CUBE_FIELD_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_CUBE_HRCHY"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_CUBE_HRCHY_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_DIMENSION"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_DIMENSION_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_FACT"                          0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_FACT_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_FACT_FIELD"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_FACT_FIELD_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_FACT_LEVEL"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_FACT_LEVEL_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_HIERARCHY"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_HIERARCHY_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_HIER_GRAPH"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_HIER_GRAPH_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_LEVEL"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_LEVEL_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_LEVEL_FIELD"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_LEVEL_FIELD_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_LVL_HRCHY"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_MD_LVL_HRCHY_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_METAEXT_VAL_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_NORM_FLD_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_NOTIF_MSG"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_OBJECT_ACCESS_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_OBJECT_LOCKS"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_OBJECT_NOTIF"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_PARTITION_DEF_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_PICDSC_"                          0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_METADATA"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_METADATA_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RESOURCE"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RESOURCE_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RES_DATA"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RES_DATA_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RES_REF"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RES_REF_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RULESET"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_RULESET_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_SRC_REF"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_PROF_SRC_REF_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_PROGRAM_INFO"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_PROGRAM_INFO_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_REQ_REPLY"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_CODEBLK"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_CODEBLK_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_DSQ_OPRT"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_DSQ_OPRT_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_INST"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_INST_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_PARAM"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_PARAM_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_VARS"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_FUNC_VARS_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_PGMFLOW"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_PGMFLOW_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_STRUCT"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_STRUCT_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_STRUCT_FLD"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SAP_STRUCT_FLD_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_SCHEDULER_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_SCHEDULE_LOGIC"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SCHEDULE_LOGIC_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_SCHEMA"                           0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_JOIN_ATTR"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_JOIN_ATTR_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_LINK"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_LINKX"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_LINKX_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_LINK_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_MVL_ATTR"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_MVL_ATTR_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_MVL_LREL"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SEBL_MVL_LREL_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SELINFO_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_SERVER_INFO_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_SERVER_NET"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_SERVER_NET_REF"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SERVER_NODE"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_SERVICED_REQ"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_SERVICE_LEVEL_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SESSION_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_SESSION_CONFIG_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_CNX_REFS_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_CNX_VALS_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_EXTNS_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_FILE_REF_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_FILE_VALS_"                  0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_PER_FILES"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SESS_TASK_LOG_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SHORTCUT_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_SLEVEL_ATTR_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_SRC_"                             0 KB       0 rows
+. . exported "INFM_9"."OPB_SRC_FLD_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_SRV_LOC_VARS_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SUBJECT_"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_SWIDGET_ATTR_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SWIDGET_INST_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_SWIDGINST_LOG_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_SWIDG_GROUP_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_TABLE_GROUP_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_TARGINDEXFLD_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_TARGINDEX_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_TARG_"                            0 KB       0 rows
+. . exported "INFM_9"."OPB_TARG_FLD_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_TARG_FLD_EXPR"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_TARG_FLD_EXPR_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_TARG_TBL_EXPR"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_TARG_TBL_EXPR_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_"                            0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_ATTR_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_INST_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_INST_BRK"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_INST_BRK_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_INST_RUN_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_MCR_DEP"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_MCR_DEP_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_RES_REFS_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_STATS"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_TASK_VAL_LIST_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_TDS_"                             0 KB       0 rows
+. . exported "INFM_9"."OPB_VALIDATE_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_VERSION_PROPS_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLD_ATTR_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLD_ATTR_DEF_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLD_INOUTDEP_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_CACHE_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_DEP_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_DEP_RUN_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_EXPR_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_PERVAL"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_PERVAL_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_RUN_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_RUN_BRK"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_RUN_BRK_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_VAR_"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_WFLOW_VAR_RUN"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_WF_RUNINFO"                       0 KB       0 rows
+. . exported "INFM_9"."OPB_WF_RUNINFO_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_"                          0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_ATTR_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_DEP_"                      0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_EXPR_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_FIELD_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_INIT_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDGET_INST_"                     0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDG_FLD_ATTR_"                   0 KB       0 rows
+. . exported "INFM_9"."OPB_WIDG_MCR_DEP_"                    0 KB       0 rows
+. . exported "INFM_9"."OPB_WORKFLOW_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_XML_INFO"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_XML_INFO_"                        0 KB       0 rows
+. . exported "INFM_9"."OPB_XML_QUAL"                         0 KB       0 rows
+. . exported "INFM_9"."OPB_XML_QUAL_"                        0 KB       0 rows
+. . exported "INFM_9"."PC_NAMESPACE_SEQUENCE"                0 KB       0 rows
+. . exported "INFM_9"."PC_UPGRADE_LOG"                       0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_CODEPAGE"              0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_CODEPAGESY"            0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_CONNECTINF"            0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_FOLDER"                0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_FTPCONNECT"            0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_SDKCONNECT"            0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_SORT"                  0 KB       0 rows
+. . exported "INFM_9"."PL_ANNOTATIONS_SORTSYSTEM"            0 KB       0 rows
+. . exported "INFM_9"."PL_ATTRDEFS_SDKCONNECTION"            0 KB       0 rows
+. . exported "INFM_9"."PL_CHILDGROUPREFS_GROUP"              0 KB       0 rows
+. . exported "INFM_9"."PL_CODEPAGES_CODEPAGESYST"            0 KB       0 rows
+. . exported "INFM_9"."PL_COMMANDARGUMENTS_EXECU"            0 KB       0 rows
+. . exported "INFM_9"."PL_COMPATIBLEFROMCODEPAGE"            0 KB       0 rows
+. . exported "INFM_9"."PL_COMPATIBLETOCODEPAGEID"            0 KB       0 rows
+. . exported "INFM_9"."PL_CONNATTRS_SDKCONNECTIN"            0 KB       0 rows
+. . exported "INFM_9"."PL_CONNECTS_LICENSEFEATUR"            0 KB       0 rows
+. . exported "INFM_9"."PL_CONTEXT_LOGCALLCONTEXT"            0 KB       0 rows
+. . exported "INFM_9"."PL_ENVVARIABLES_PROCESS"              0 KB       0 rows
+. . exported "INFM_9"."PL_EXCHANGES_LICENSEFEATU"            0 KB       0 rows
+. . exported "INFM_9"."PL_FLAGS_LICENSEFEATURES"             0 KB       0 rows
+. . exported "INFM_9"."PL_FOLDEROBJECTS_DOMAINOB"            0 KB       0 rows
+. . exported "INFM_9"."PL_GATEWAYS_LINKEDDOMAIN"             0 KB       0 rows
+. . exported "INFM_9"."PL_INTERNALPROCESSOPTIONS"            0 KB       0 rows
+. . exported "INFM_9"."PL_INTERNALSERVICEOPTIONS"            0 KB       0 rows
+. . exported "INFM_9"."PL_IPADDRESSES_USERCALUSA"            0 KB       0 rows
+. . exported "INFM_9"."PL_LDAPGROUPS_LDAPGROUP"              0 KB       0 rows
+. . exported "INFM_9"."PL_LDAPNAMESPACES_UMSERVI"            0 KB       0 rows
+. . exported "INFM_9"."PL_LDAPUSERS_LDAPGROUP"               0 KB       0 rows
+. . exported "INFM_9"."PL_LICENSEDSERVICES_LICEN"            0 KB       0 rows
+. . exported "INFM_9"."PL_LINKEDDOMAINS_LINKEDDO"            0 KB       0 rows
+. . exported "INFM_9"."PL_NODES_GRID"                        0 KB       0 rows
+. . exported "INFM_9"."PL_NODES_LICENSEUSAGE"                0 KB       0 rows
+. . exported "INFM_9"."PL_OPTIONS_DOMAINNODE"                0 KB       0 rows
+. . exported "INFM_9"."PL_OPTIONS_LICENSEFEATURE"            0 KB       0 rows
+. . exported "INFM_9"."PL_OPTIONS_NODECONFIG"                0 KB       0 rows
+. . exported "INFM_9"."PL_OPTIONS_OSPROFILE"                 0 KB       0 rows
+. . exported "INFM_9"."PL_PCAPABILITYINFO_PREGIS"            0 KB       0 rows
+. . exported "INFM_9"."PL_PLATFORMS_LICENSEFEATU"            0 KB       0 rows
+. . exported "INFM_9"."PL_PORTALS_NODECONFIG"                0 KB       0 rows
+. . exported "INFM_9"."PL_PREDEFINEDRESOURCES_NO"            0 KB       0 rows
+. . exported "INFM_9"."PL_PROCESSEDDATAUPGRADES_"            0 KB       0 rows
+. . exported "INFM_9"."PL_REGISTEREDIMFPACKAGES_"            0 KB       0 rows
+. . exported "INFM_9"."PL_REPOSITORYUPGRADEINFO_"            0 KB       0 rows
+. . exported "INFM_9"."PL_RESOURCES_NODECONFIG"              0 KB       0 rows
+. . exported "INFM_9"."PL_RUNCONTEXT_LOGCALLCONT"            0 KB       0 rows
+. . exported "INFM_9"."PL_SERVICES_NODESERVICES"             0 KB       0 rows
+. . exported "INFM_9"."PL_SORTIDS_CODEPAGE"                  0 KB       0 rows
+. . exported "INFM_9"."PL_SORTS_SORTSYSTEM"                  0 KB       0 rows
+. . exported "INFM_9"."PL_SYNCHRONIZETIMES_UMSER"            0 KB       0 rows
+. . exported "INFM_9"."PL_UPGRADEDIMFPACKAGES_RE"            0 KB       0 rows
+. . exported "INFM_9"."PL_USERREFS_ALERTSERVICE"             0 KB       0 rows
+. . exported "INFM_9"."PO_ALERT"                             0 KB       0 rows
+. . exported "INFM_9"."PO_ANNOTATION"                        0 KB       0 rows
+. . exported "INFM_9"."PO_CALUSAGE"                          0 KB       0 rows
+. . exported "INFM_9"."PO_CODEPAGE"                          0 KB       0 rows
+. . exported "INFM_9"."PO_CODEPAGESYSTEM"                    0 KB       0 rows
+. . exported "INFM_9"."PO_COMMAND"                           0 KB       0 rows
+. . exported "INFM_9"."PO_CONNECTINFO"                       0 KB       0 rows
+. . exported "INFM_9"."PO_CONNECTINFOCLASSIFIERC"            0 KB       0 rows
+. . exported "INFM_9"."PO_CONNECTIONPOOLATTRIBUT"            0 KB       0 rows
+. . exported "INFM_9"."PO_CONTEXT"                           0 KB       0 rows
+. . exported "INFM_9"."PO_DATAMAPTYPE"                       0 KB       0 rows
+. . exported "INFM_9"."PO_DBCONNECTIVITY"                    0 KB       0 rows
+. . exported "INFM_9"."PO_DOMAINOBJECTLOCATE"                0 KB       0 rows
+. . exported "INFM_9"."PO_FTPCONNECTIONATTRIBUTE"            0 KB       0 rows
+. . exported "INFM_9"."PO_HTTPSINFO"                         0 KB       0 rows
+. . exported "INFM_9"."PO_IMFPACKAGEUPGRADEINFO"             0 KB       0 rows
+. . exported "INFM_9"."PO_ISPBOOLEAN"                        0 KB       0 rows
+. . exported "INFM_9"."PO_ISPINTEGER"                        0 KB       0 rows
+. . exported "INFM_9"."PO_ISPLONG"                           0 KB       0 rows
+. . exported "INFM_9"."PO_ISPSTRING"                         0 KB       0 rows
+. . exported "INFM_9"."PO_LDAPNAMESPACE"                     0 KB       0 rows
+. . exported "INFM_9"."PO_LICENSEDSERVICE"                   0 KB       0 rows
+. . exported "INFM_9"."PO_LICENSEFEATURES"                   0 KB       0 rows
+. . exported "INFM_9"."PO_LICENSEOPTION"                     0 KB       0 rows
+. . exported "INFM_9"."PO_LOGCALLCONTEXT"                    0 KB       0 rows
+. . exported "INFM_9"."PO_LOGEVENT"                          0 KB       0 rows
+. . exported "INFM_9"."PO_MPSERVICEINFO"                     0 KB       0 rows
+. . exported "INFM_9"."PO_NODECONFIG"                        0 KB       0 rows
+. . exported "INFM_9"."PO_NODEREF"                           0 KB       0 rows
+. . exported "INFM_9"."PO_NODESERVICES"                      0 KB       0 rows
+. . exported "INFM_9"."PO_OBJECTREFERENCE"                   0 KB       0 rows
+. . exported "INFM_9"."PO_OSPROFILE"                         0 KB       0 rows
+. . exported "INFM_9"."PO_PCAPABILITYINFO"                   0 KB       0 rows
+. . exported "INFM_9"."PO_PIMFPACKAGEINFO"                   0 KB       0 rows
+. . exported "INFM_9"."PO_PREGISTEREDCAPABILITIE"            0 KB       0 rows
+. . exported "INFM_9"."PO_PROCESSRUNTIME"                    0 KB       0 rows
+. . exported "INFM_9"."PO_REGISTEREDLOGFILE"                 0 KB       0 rows
+. . exported "INFM_9"."PO_REGISTEREDRUN"                     0 KB       0 rows
+. . exported "INFM_9"."PO_REGISTEREDRUNLOG"                  0 KB       0 rows
+. . exported "INFM_9"."PO_REPOSITORYOPERATIONALI"            0 KB       0 rows
+. . exported "INFM_9"."PO_REPOSITORYUPGRADEINFO"             0 KB       0 rows
+. . exported "INFM_9"."PO_SDKCONNECTINFOATTR"                0 KB       0 rows
+. . exported "INFM_9"."PO_SDKCONNECTIONATTRDEF"              0 KB       0 rows
+. . exported "INFM_9"."PO_SDKCONNECTIONTYPE"                 0 KB       0 rows
+. . exported "INFM_9"."PO_SECURITYDOMAIN"                    0 KB       0 rows
+. . exported "INFM_9"."PO_SERVICERUNTIME"                    0 KB       0 rows
+. . exported "INFM_9"."PO_SORT"                              0 KB       0 rows
+. . exported "INFM_9"."PO_SORTSYSTEM"                        0 KB       0 rows
+. . exported "INFM_9"."PO_STAGINGINFOATTRIBUTES"             0 KB       0 rows
+. . exported "INFM_9"."PO_SUBSTITUTEHOLDER"                  0 KB       0 rows
+. . exported "INFM_9"."PO_TIMEOFDAY"                         0 KB       0 rows
+. . exported "INFM_9"."PO_TYPEACONNECTIONATTRIBU"            0 KB       0 rows
+. . exported "INFM_9"."PO_TYPEBCONNECTIONATTRIBU"            0 KB       0 rows
+. . exported "INFM_9"."PO_TYPERCONNECTIONATTRIBU"            0 KB       0 rows
+. . exported "INFM_9"."PR_GANNOTATIONS"                      0 KB       0 rows
+. . exported "INFM_9"."PR_RSID_TXID"                         0 KB       0 rows
+Master table "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.SYS_EXPORT_SCHEMA_01 is:
+  /backup/obid1/expdp/expdp_obid1_infm_9_290518_101846.dmp
+Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at Tue May 29 10:31:46 2018 elapsed 0 00:01:12
+
+
+Export: Release 11.2.0.4.0 - Production on Tue May 29 10:31:47 2018
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/******** schemas=dac_9 directory=PART_DIR dumpfile=expdp_obid1_dac_9_290518_101846.dmp logfile=expdp_dac_9_290518_101846.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 2.071 GB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "DAC_9"."W_ETL_RUN_SDTL"                    992.3 MB 1246473 rows
+. . exported "DAC_9"."W_ETL_RUN_STEP"                    342.0 MB  710994 rows
+. . exported "DAC_9"."W_ETL_RUN_AUDIT"                   195.9 MB 1474661 rows
+. . exported "DAC_9"."W_ETL_OBJ_REF"                     94.24 MB  671245 rows
+. . exported "DAC_9"."W_ETL_SA_STEP"                     7.609 MB   63017 rows
+. . exported "DAC_9"."W_ETL_STEP_AD_ALL"                 12.22 MB   87200 rows
+. . exported "DAC_9"."W_ETL_TABLE_COL"                   7.171 MB   53473 rows
+. . exported "DAC_9"."W_ETL_DEFN_RUN"                    4.602 MB    4577 rows
+. . exported "DAC_9"."W_ETL_STEP_TBL"                    2.405 MB   15459 rows
+. . exported "DAC_9"."W_ETL_INDEX"                       1.510 MB    9260 rows
+. . exported "DAC_9"."W_ETL_INDEX_COL"                   1.233 MB   10749 rows
+. . exported "DAC_9"."W_ETL_SA_EXT_TBL"                  999.1 KB    8328 rows
+. . exported "DAC_9"."W_ETL_STEP"                        1.228 MB    3244 rows
+. . exported "DAC_9"."W_ETL_TEXT"                        504.1 KB     303 rows
+. . exported "DAC_9"."W_ETL_STEP_AD"                     306.6 KB    2077 rows
+. . exported "DAC_9"."W_ETL_TABLE"                       299.2 KB    3007 rows
+. . exported "DAC_9"."W_ETL_DEFN_TBL"                    276.5 KB    2186 rows
+. . exported "DAC_9"."W_ETL_TBL_STATS"                   257.6 KB    2171 rows
+. . exported "DAC_9"."W_ETL_DEFN_STEP"                   229.3 KB     925 rows
+. . exported "DAC_9"."W_ETL_PARAM"                       221.2 KB    1108 rows
+. . exported "DAC_9"."W_ETL_REFRESH_DT"                  228.4 KB    1856 rows
+. . exported "DAC_9"."W_ETL_DBCONN"                      16.12 KB      10 rows
+. . exported "DAC_9"."W_ETL_SERVER"                      12.50 KB       2 rows
+. . exported "DAC_9"."W_ETL_SYSPROP"                     22.32 KB      29 rows
+. . exported "DAC_9"."W_ETL_DIFFMERGE"                   131.0 KB     913 rows
+. . exported "DAC_9"."W_ETL_GROUP_STEP"                  129.7 KB    1031 rows
+. . exported "DAC_9"."W_ETL_IND_OVRD"                    107.5 KB     760 rows
+. . exported "DAC_9"."W_ETL_REL_TABLE"                   105.1 KB     802 rows
+. . exported "DAC_9"."W_ETL_APP"                         14.42 KB      40 rows
+. . exported "DAC_9"."W_ETL_AUDIT"                       28.78 KB      72 rows
+. . exported "DAC_9"."W_ETL_DBSRC"                       8.773 KB      16 rows
+. . exported "DAC_9"."W_ETL_DB_INDEX"                    7.937 KB       5 rows
+. . exported "DAC_9"."W_ETL_DEFN"                        13.08 KB      29 rows
+. . exported "DAC_9"."W_ETL_DEFN_DB"                     7.976 KB       8 rows
+. . exported "DAC_9"."W_ETL_DEFN_PRM"                    29.17 KB     142 rows
+. . exported "DAC_9"."W_ETL_DEFN_SA"                     15.46 KB      73 rows
+. . exported "DAC_9"."W_ETL_DIFF_ENTY"                   23.32 KB      84 rows
+. . exported "DAC_9"."W_ETL_DIFF_VER"                    7.125 KB       1 rows
+. . exported "DAC_9"."W_ETL_EMAIL"                       8.429 KB       6 rows
+. . exported "DAC_9"."W_ETL_EXEC_TYPE"                   8.664 KB       9 rows
+. . exported "DAC_9"."W_ETL_FOLDER"                      13.82 KB      76 rows
+. . exported "DAC_9"."W_ETL_PHASE"                       9.820 KB      32 rows
+. . exported "DAC_9"."W_ETL_REPOS"                       7.171 KB       8 rows
+. . exported "DAC_9"."W_ETL_SA"                          54.57 KB     418 rows
+. . exported "DAC_9"."W_ETL_SA_TABLE"                    62.95 KB     471 rows
+. . exported "DAC_9"."W_ETL_SCHEDULE"                    15.64 KB       9 rows
+. . exported "DAC_9"."W_ETL_STEP_PHASE"                  22.47 KB     106 rows
+. . exported "DAC_9"."W_ETL_STEP_TMPLT"                  25.96 KB     128 rows
+. . exported "DAC_9"."W_ETL_TAG"                         14.09 KB      40 rows
+. . exported "DAC_9"."W_ETL_TAG_SA"                      39.20 KB     271 rows
+. . exported "DAC_9"."W_ETL_TAG_STEP"                    62.56 KB     469 rows
+. . exported "DAC_9"."W_ETL_TBL_OVRD"                    19.78 KB      86 rows
+. . exported "DAC_9"."W_ETL_TEMPLATE"                    20.32 KB     116 rows
+. . exported "DAC_9"."W_ETL_USER"                        9.968 KB      12 rows
+. . exported "DAC_9"."TMP_APP"                               0 KB       0 rows
+. . exported "DAC_9"."TMP_APP_REL"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_DBCONN"                            0 KB       0 rows
+. . exported "DAC_9"."TMP_DBSRC"                             0 KB       0 rows
+. . exported "DAC_9"."TMP_DB_INDEX"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_DEFN"                              0 KB       0 rows
+. . exported "DAC_9"."TMP_DEFN_DB"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_DEFN_PRM"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_DEFN_SA"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_DEFN_STEP"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_DEFN_TBL"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_EMAIL"                             0 KB       0 rows
+. . exported "DAC_9"."TMP_EXEC_TYPE"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_FOLDER"                            0 KB       0 rows
+. . exported "DAC_9"."TMP_GROUP_STEP"                        0 KB       0 rows
+. . exported "DAC_9"."TMP_INDEX"                             0 KB       0 rows
+. . exported "DAC_9"."TMP_INDEX_COL"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_IND_OVRD"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_LINEAGE"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_OBJ_REF"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_PARAM"                             0 KB       0 rows
+. . exported "DAC_9"."TMP_PHASE"                             0 KB       0 rows
+. . exported "DAC_9"."TMP_REL_TABLE"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_SA"                                0 KB       0 rows
+. . exported "DAC_9"."TMP_SA_EXT_TBL"                        0 KB       0 rows
+. . exported "DAC_9"."TMP_SA_STEP"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_SA_TABLE"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_SEEDTBL"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_SEED_DB"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP"                              0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP_AD"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP_AD_ALL"                       0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP_DEP"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP_PHASE"                        0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP_TBL"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_STEP_TMPLT"                        0 KB       0 rows
+. . exported "DAC_9"."TMP_SYSPROP"                           0 KB       0 rows
+. . exported "DAC_9"."TMP_TABLE"                             0 KB       0 rows
+. . exported "DAC_9"."TMP_TABLE_COL"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_TAG"                               0 KB       0 rows
+. . exported "DAC_9"."TMP_TAG_SA"                            0 KB       0 rows
+. . exported "DAC_9"."TMP_TAG_STEP"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_TBL_INDEX"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_TBL_OVRD"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_TBL_STATS"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_TCOL_TRNS"                         0 KB       0 rows
+. . exported "DAC_9"."TMP_TEMPLATE"                          0 KB       0 rows
+. . exported "DAC_9"."TMP_TEXT"                              0 KB       0 rows
+. . exported "DAC_9"."W_ETL_APP_REL"                         0 KB       0 rows
+. . exported "DAC_9"."W_ETL_DBPROP"                          0 KB       0 rows
+. . exported "DAC_9"."W_ETL_EXTENSION"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_EXTN_DTL"                        0 KB       0 rows
+. . exported "DAC_9"."W_ETL_LINEAGE"                         0 KB       0 rows
+. . exported "DAC_9"."W_ETL_MERGEDATA"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_RUN_SUMM"                        0 KB       0 rows
+. . exported "DAC_9"."W_ETL_RUN_VAL"                         0 KB       0 rows
+. . exported "DAC_9"."W_ETL_RUN_VITEM"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_SEEDTBL"                         0 KB       0 rows
+. . exported "DAC_9"."W_ETL_SEED_DB"                         0 KB       0 rows
+. . exported "DAC_9"."W_ETL_STEP_DEP"                        0 KB       0 rows
+. . exported "DAC_9"."W_ETL_STEP_TYPE"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_TBL_INDEX"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_TCOL_TRNS"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_TEMP_DEP"                        0 KB       0 rows
+. . exported "DAC_9"."W_ETL_TEMP_IND"                        0 KB       0 rows
+. . exported "DAC_9"."W_ETL_TEMP_KEYS"                       0 KB       0 rows
+. . exported "DAC_9"."W_ETL_TEMP_TBL"                        0 KB       0 rows
+. . exported "DAC_9"."W_ETL_UPG_LOOKUP"                      0 KB       0 rows
+. . exported "DAC_9"."W_ETL_UPG_PROC"                        0 KB       0 rows
+Master table "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.SYS_EXPORT_SCHEMA_01 is:
+  /backup/obid1/expdp/expdp_obid1_dac_9_290518_101846.dmp
+Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at Tue May 29 10:32:23 2018 elapsed 0 00:00:35
+
+SEND MAIL TO TEAM-3
+=====================
+Export completed at 290518_101846

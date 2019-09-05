@@ -1,0 +1,12 @@
+SQL&gt; select * from ad_bugs where bug_number in ('9128838');
+<br>
+
+no rows selected
+
+<br>
+SQL&gt; set spool off
+<br>
+SP2-0158: unknown SET option &quot;spool&quot;
+<br>
+SQL&gt; spool off
+<br>

@@ -1,0 +1,65 @@
+SQL> @OraclePT.sql
+214  /
+Database Version                                                                
+-----------------                                                               
+11.2.0.4.0                                                                      
+                                                                               
+Hostname                                                                        
+----------                                                                      
+mcddallnx433                                                                    
+                                                                               
+SGA Size (MB)                                                                   
+-------------                                                                   
+163109                                                                          
+                                                                               
+Database Size (MB)                                                              
+-----------------                                                               
+25457225                                                                        
+                                                                               
+Instance start-up time                                                          
+-----------------------                                                         
+20:21:08 24-NOV-18                                                              
+                                                                               
+Active Sessions                                                                 
+---------------                                                                 
+253 sessions: 203 inactive,2 active, 48 system, 0 killed                        
+                                                                               
+Sessions Waiting                                                                
+                                                                               
+Count      Event Name                                                           
+-----      -----------------------------------------------------                
+10          Space Manager: slave idle wait                                      
+5          EMON slave idle wait                                                 
+2          Streams AQ: waiting for time management or cleanup                   
+2          DIAG idle wait                                                       
+1          Streams AQ: emn coordinator idle wait                                
+                                                                               
+-----      -----------------------------------------------------                
+TOP Physical i/o, logical i/o, memory and CPU processes                         
+---------------                                                                 
+top physical i/o process: SID 2962 User : FBI_DW: Amount used : 33064723:       
+Percent used: 50.17                                                             
+top logical i/o process: SID 2438 User : MDW: Amount used : 1033354403: Percent 
+used: 95.9                                                                      
+top memory process: SID 2876 User : FBI_DW: Amount used : 15768816: Percent     
+used: 1.22                                                                      
+top cpu process: SID 2438 User : MDW: Amount used : 181629: Percent used: 64.55 
+------------------------------------------------------------------              
+TOP CPU users by usage                                                          
+---------------                                                                 
+MDW--1816.42                                                                    
+---------------                                                                 
+FBI_DW--888.35                                                                  
+---------------                                                                 
+FBI_BIA_ODIREPO--3.22                                                           
+---------------                                                                 
+OBIP1_BIPLATFORM--.77                                                           
+---------------                                                                 
+OBIP1_MDS--.22                                                                  
+---------------                                                                 
+FBI_BIACOMP--.09                                                                
+---------------                                                                 
+
+PL/SQL procedure successfully completed.
+
+SQL> exit

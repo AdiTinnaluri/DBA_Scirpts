@@ -1,0 +1,4 @@
+#DB_NAME:NB_ORA_SERV:NB_ORA_CLIENT:NB_ORA_POLICY
+erpp1:phl3inlmnbuama01:mcddallnx428:inlm-a-phl3-ora-mcddallnx428-ERPP1-online-n-05
+ARCH_erpp1:phl3inlmnbuama01:mcddallnx428:inlm-a-phl3-ora-mcddallnx428-ERPP1-archive-n-05
+EMAIL:Alerts-McD@datavail.com

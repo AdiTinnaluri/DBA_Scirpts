@@ -1,0 +1,1 @@
+select 'ALTER SYSTEM KILL SESSION '''||sid||', '||serial#||''' immediate;'from gv$session where sid='&SID';

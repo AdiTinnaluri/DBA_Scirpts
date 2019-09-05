@@ -1,0 +1,452 @@
+
+ASH Report For ERPU1/erpu1
+
+DB Name         DB Id    Instance     Inst Num Release     RAC Host
+------------ ----------- ------------ -------- ----------- --- ------------
+ERPU1         3533720355 erpu1               1 12.1.0.2.0  NO  mcddallnx157
+
+CPUs           SGA Size       Buffer Cache        Shared Pool    ASH Buffer Size
+---- ------------------ ------------------ ------------------ ------------------
+  30     49,152M (100%)    29,056M (59.1%)     5,888M (12.0%)       60.0M (0.1%)
+In-memory Area Size
+------------------
+       0.0M (0.0%)
+
+
+          Analysis Begin Time:   21-Nov-17 18:00:00
+            Analysis End Time:   21-Nov-17 19:00:00
+                 Elapsed Time:        60.0 (mins)
+            Begin Data Source:   V$ACTIVE_SESSION_HISTORY
+              End Data Source:   V$ACTIVE_SESSION_HISTORY
+                 Sample Count:      15,096
+      Average Active Sessions:        4.19
+  Avg. Active Session per CPU:        0.14
+                Report Target:   None specified
+
+Top User Events                  DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                                                               Avg Active
+Event                               Event Class        % Event   Sessions
+----------------------------------- --------------- ---------- ----------
+CPU + Wait for CPU                  CPU                  63.26       2.65
+direct path read                    User I/O             13.73       0.58
+db file scattered read              User I/O              3.41       0.14
+db file sequential read             User I/O              3.21       0.13
+read by other session               User I/O              2.36       0.10
+          -------------------------------------------------------------
+
+Top Background Events            DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                                                               Avg Active
+Event                               Event Class     % Activity   Sessions
+----------------------------------- --------------- ---------- ----------
+db file async I/O submit            System I/O            3.62       0.15
+RMAN backup & recovery I/O          System I/O            2.27       0.10
+log file parallel write             System I/O            1.44       0.06
+CPU + Wait for CPU                  CPU                   1.38       0.06
+          -------------------------------------------------------------
+
+Top Event P1/P2/P3 Values        DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+Event                          % Event  P1 Value, P2 Value, P3 Value % Activity
+------------------------------ ------- ----------------------------- ----------
+Parameter 1                Parameter 2                Parameter 3
+-------------------------- -------------------------- --------------------------
+direct path read                 13.73           "540","415897","16"       0.01
+file number                first dba                  block cnt
+
+db file async I/O submit          3.62                "3552","0","0"       0.04
+requests                   interrupt                  timeout
+
+db file scattered read            3.42              "6","355268","8"       0.01
+file#                      block#                     blocks
+
+db file sequential read           3.25                "2","7996","1"       0.01
+file#                      block#                     blocks
+
+read by other session             2.36           "1413","440881","1"       0.03
+file#                      block#                     class#
+
+          -------------------------------------------------------------
+
+Top Service/Module               DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+Service        Module                   % Activity Action               % Action
+-------------- ------------------------ ---------- ------------------ ----------
+erpu1          e:XMCI:bes:oracle.apps.f      23.73 XMCI/MCDUSINTFUSER      23.73
+               XMCI_PCAR204_WF_STATUS_M      18.76 Concurrent Request      18.76
+               XMCIAPE2012049                14.88 Concurrent Request      14.88
+               PJI_PJI_SUMMARIZE_INCR         7.68 Concurrent Request       7.68
+SYS$BACKGROUND UNNAMED                        6.07 UNNAMED                  6.07
+          -------------------------------------------------------------
+
+Top Client IDs                   DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                                                              Avg Active
+Client ID                                          % Activity   Sessions
+-------------------------------------------------- ---------- ----------
+User            Program                           Service
+--------------- --------------------------------- --------------------
+MCDINTF                                                 61.82       2.59
+APPS            STANDARD@mcddallnx156 (TNS V1-V3) erpu1
+
+E7197238                                                23.93       1.00
+APPS            STANDARD@mcddallnx156 (TNS V1-V3) erpu1
+
+oraerpu1                                                 3.55       0.15
+SYS             rman@mcddallnx157 (TNS V1-V3)     SYS$USERS
+
+SYSADMIN                                                 1.17       0.05
+APPS            MCD_GEMS_CONC_MGR@mcddallnx156 (T erpu1
+
+          -------------------------------------------------------------
+
+Top SQL Command Types            DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+-> 'Distinct SQLIDs' is the count of the distinct number of SQLIDs
+      with the given SQL Command Type found over all the ASH samples
+      in the analysis period
+
+                                           Distinct            Avg Active
+SQL Command Type                             SQLIDs % Activity   Sessions
+---------------------------------------- ---------- ---------- ----------
+SELECT                                          162      37.75       1.58
+INSERT                                           34      34.67       1.45
+UPDATE                                           22       8.76       0.37
+CREATE INDEX                                      2       5.05       0.21
+DELETE                                            7       2.53       0.11
+          -------------------------------------------------------------
+
+Top Phases of Execution          DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                                          Avg Active
+Phase of Execution             % Activity   Sessions
+------------------------------ ---------- ----------
+SQL Execution                       89.20       3.74
+PLSQL Execution                      1.43       0.06
+Parse                                1.15       0.05
+Hard Parse                           1.15       0.05
+          -------------------------------------------------------------
+
+
+Top SQL with Top Events          DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                 SQL ID         FullPlanhash             Planhash
+----------------------- -------------------- --------------------
+           Sampled #
+       of Executions     % Activity Event
+-------------------- -------------- ------------------------------
+% Event Top Row Source                    % RwSrc
+------- --------------------------------- -------
+          apnhvxjvjyg2g           1943329299           2706466527
+                   1          23.61 CPU + Wait for CPU
+  23.61 INDEX - RANGE SCAN                  18.40
+SELECT PAPF.PERSON_ID, XOMS.ODS_ID, XOMS.MDM_ID, PAPF.OBJECT_VERSION_NUMBER, PPT
+.SYSTEM_PERSON_TYPE, PAPF.EFFECTIVE_START_DATE, XOMS.ROWID ROW_ID FROM XMCI.XMCI
+_PCAI08_ODS_MDM_MAP_STG XOMS, PER_ALL_PEOPLE_F PAPF, PER_PERSON_TYPES PPT, PER_P
+ERSON_TYPE_USAGES_F PTU WHERE SYSDATE BETWEEN PAPF.EFFECTIVE_START_DATE AND PAPF
+
+          byny42maxkmw4           1165647824                  N/A
+                   1          18.63 CPU + Wait for CPU
+  17.78 TABLE ACCESS - FULL                 16.95
+INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "APPS"."XMCI_PCAR204_WF_STATUS_MV" ( S
+ELECT a.parent_name division , NVL(a.child_name,'Others') region
+ , TO_NUMBER(b.project_number) project_number , b.NAME project_name
+ , b.org_id -- MOAC -- Added by Nagasatyamaruthi
+
+          gkz97qg6v9au1           4251336957                  N/A
+                   1          14.43 direct path read
+  12.78 TABLE ACCESS - FULL                  8.03
+INSERT INTO XMCI_APE2012049_MOVTRACK_TEMP SELECT GL.JE_HEADER_ID, GL.JE_LINE_NUM
+, GL.RECORD_TYPE, GL.LEDGER, GL.PERIOD_NAME, GL.SEGMENT1, GL.SEGMENT2, GL.SEGMEN
+T3, GL.SEGMENT4, GL.SEGMENT5, GL.JE_SOURCE, GL.JE_CATEGORY, XLA_AR.DESCRIPTION,
+XLA_AR.AR_DIST_AMOUNT, XLA_AR.MT_ID, GL.DEFAULT_EFFECTIVE_DATE, 'Employee' SUPPL
+
+                                                              N/A
+                   1          14.43 CPU + Wait for CPU
+   1.56 HASH JOIN                            0.44
+INSERT INTO XMCI_APE2012049_MOVTRACK_TEMP SELECT GL.JE_HEADER_ID, GL.JE_LINE_NUM
+, GL.RECORD_TYPE, GL.LEDGER, GL.PERIOD_NAME, GL.SEGMENT1, GL.SEGMENT2, GL.SEGMEN
+T3, GL.SEGMENT4, GL.SEGMENT5, GL.JE_SOURCE, GL.JE_CATEGORY, XLA_AR.DESCRIPTION,
+XLA_AR.AR_DIST_AMOUNT, XLA_AR.MT_ID, GL.DEFAULT_EFFECTIVE_DATE, 'Employee' SUPPL
+
+          31wdjgfmdxsgm           4166240289           1767886923
+                   1           4.25 CPU + Wait for CPU
+   1.78 INDEX - FAST FULL SCAN               0.83
+CREATE INDEX xmci.xmci_temp_fa_dist_N1 ON xmci.xmci_temp_fa_dist (asset_id, peri
+od_counter) TABLESPACE XMCI_IDX
+
+
+                                    direct path write
+   1.33 INDEX BUILD - NON UNIQUE             1.33
+
+          czrv6bpw0gsqg           2593052982           2146021236
+                   1           3.48 CPU + Wait for CPU
+   3.48 TABLE ACCESS - FULL                  3.47
+UPDATE /*+ index(status, PJI_PJI_PROJ_EXTR_STATUS_U1) */ PJI_PJI_PROJ_EXTR_STATU
+S STATUS SET (CLOSED_DATE, PROJECT_ORGANIZATION_ID, COST_BUDGET_C_VERSION, COST_
+BUDGET_CO_VERSION, REVENUE_BUDGET_C_VERSION, REVENUE_BUDGET_CO_VERSION, COST_FOR
+ECAST_C_VERSION, REVENUE_FORECAST_C_VERSION) = (SELECT /*+ index(map, PJI_PJI_PR
+
+          -------------------------------------------------------------
+
+Top SQL with Top Row Sources     DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                 SQL ID         FullPlanHash             PlanHash
+----------------------- -------------------- --------------------
+           Sampled #
+       of Executions     % Activity
+-------------------- --------------
+Row Source                               % RwSrc Top Event               % Event
+---------------------------------------- ------- ----------------------- -------
+          apnhvxjvjyg2g           1943329299           2706466527
+                   1          23.61
+INDEX - RANGE SCAN                         18.40 CPU + Wait for CPU        18.40
+SELECT PAPF.PERSON_ID, XOMS.ODS_ID, XOMS.MDM_ID, PAPF.OBJECT_VERSION_NUMBER, PPT
+.SYSTEM_PERSON_TYPE, PAPF.EFFECTIVE_START_DATE, XOMS.ROWID ROW_ID FROM XMCI.XMCI
+_PCAI08_ODS_MDM_MAP_STG XOMS, PER_ALL_PEOPLE_F PAPF, PER_PERSON_TYPES PPT, PER_P
+ERSON_TYPE_USAGES_F PTU WHERE SYSDATE BETWEEN PAPF.EFFECTIVE_START_DATE AND PAPF
+
+
+
+BUFFER - SORT                               1.60 CPU + Wait for CPU         1.60
+
+
+
+TABLE ACCESS - BY INDEX ROWID               1.54 CPU + Wait for CPU         1.54
+
+          byny42maxkmw4           1165647824                  N/A
+                   1          18.63
+TABLE ACCESS - FULL                        16.95 CPU + Wait for CPU        16.95
+INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "APPS"."XMCI_PCAR204_WF_STATUS_MV" ( S
+ELECT a.parent_name division , NVL(a.child_name,'Others') region
+ , TO_NUMBER(b.project_number) project_number , b.NAME project_name
+ , b.org_id -- MOAC -- Added by Nagasatyamaruthi
+
+          gkz97qg6v9au1           4251336957                  N/A
+                   1          14.43
+TABLE ACCESS - FULL                         8.27 direct path read           8.03
+INSERT INTO XMCI_APE2012049_MOVTRACK_TEMP SELECT GL.JE_HEADER_ID, GL.JE_LINE_NUM
+, GL.RECORD_TYPE, GL.LEDGER, GL.PERIOD_NAME, GL.SEGMENT1, GL.SEGMENT2, GL.SEGMEN
+T3, GL.SEGMENT4, GL.SEGMENT5, GL.JE_SOURCE, GL.JE_CATEGORY, XLA_AR.DESCRIPTION,
+XLA_AR.AR_DIST_AMOUNT, XLA_AR.MT_ID, GL.DEFAULT_EFFECTIVE_DATE, 'Employee' SUPPL
+
+                                                              N/A
+                   1          14.43
+TABLE ACCESS - FULL                         4.87 direct path read           4.51
+INSERT INTO XMCI_APE2012049_MOVTRACK_TEMP SELECT GL.JE_HEADER_ID, GL.JE_LINE_NUM
+, GL.RECORD_TYPE, GL.LEDGER, GL.PERIOD_NAME, GL.SEGMENT1, GL.SEGMENT2, GL.SEGMEN
+T3, GL.SEGMENT4, GL.SEGMENT5, GL.JE_SOURCE, GL.JE_CATEGORY, XLA_AR.DESCRIPTION,
+XLA_AR.AR_DIST_AMOUNT, XLA_AR.MT_ID, GL.DEFAULT_EFFECTIVE_DATE, 'Employee' SUPPL
+
+          31wdjgfmdxsgm           4166240289           1767886923
+                   1           4.25
+INDEX BUILD - NON UNIQUE                    1.71 direct path write          1.33
+CREATE INDEX xmci.xmci_temp_fa_dist_N1 ON xmci.xmci_temp_fa_dist (asset_id, peri
+od_counter) TABLESPACE XMCI_IDX
+
+
+
+INDEX - FAST FULL SCAN                      1.52 CPU + Wait for CPU         0.83
+
+
+
+SORT - CREATE INDEX                         1.01 CPU + Wait for CPU         0.58
+
+          czrv6bpw0gsqg           2593052982           2146021236
+                   1           3.48
+TABLE ACCESS - FULL                         3.47 CPU + Wait for CPU         3.47
+UPDATE /*+ index(status, PJI_PJI_PROJ_EXTR_STATUS_U1) */ PJI_PJI_PROJ_EXTR_STATU
+S STATUS SET (CLOSED_DATE, PROJECT_ORGANIZATION_ID, COST_BUDGET_C_VERSION, COST_
+BUDGET_CO_VERSION, REVENUE_BUDGET_C_VERSION, REVENUE_BUDGET_CO_VERSION, COST_FOR
+Top SQL with Top Row Sources     DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                 SQL ID         FullPlanHash             PlanHash
+----------------------- -------------------- --------------------
+           Sampled #
+       of Executions     % Activity
+-------------------- --------------
+Row Source                               % RwSrc Top Event               % Event
+---------------------------------------- ------- ----------------------- -------
+ECAST_C_VERSION, REVENUE_FORECAST_C_VERSION) = (SELECT /*+ index(map, PJI_PJI_PR
+
+          -------------------------------------------------------------
+
+Top SQL using literals           DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                  No data exists for this section of the report.
+          -------------------------------------------------------------
+
+Top Parsing Module/Action        DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                  No data exists for this section of the report.
+          -------------------------------------------------------------
+
+Top PL/SQL Procedures            DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+-> 'PL/SQL entry subprogram' represents the application's top-level
+      entry-point(procedure, function, trigger, package initialization
+      or RPC call) into PL/SQL.
+-> 'PL/SQL current subprogram' is the pl/sql subprogram being executed
+      at the point of sampling . If the value is 'SQL', it represents
+      the percentage of time spent executing SQL for the particular
+      plsql entry subprogram
+
+PLSQL Entry Subprogram                                            % Activity
+----------------------------------------------------------------- ----------
+PLSQL Current Subprogram                                           % Current
+----------------------------------------------------------------- ----------
+APPS.XMCI_PCAI08_ODS_MDM_CNV.MAIN                                      23.77
+   SQL                                                                 23.75
+APPS.XMCI_PCAR204_WF_STATUS.MATERIALIZED_VIEW_REFRESH                  18.73
+   SQL                                                                 18.67
+APPS.XMCI_APE2012049_MOVETRACK_INTF.EXTRACT_DATA_TO_FLAT_FILE          14.88
+   SQL                                                                 14.88
+APPS.PJI_RM_SUM_MAIN.SUMMARIZE                                          6.98
+   SQL                                                                  6.98
+APPS.XMCI_PROJ_RESOURCE_DTLS_PKG.POPULATE_TABLE                         5.74
+   SQL                                                                  4.90
+          -------------------------------------------------------------
+
+Top Java Workload                DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                  No data exists for this section of the report.
+          -------------------------------------------------------------
+
+Top Call Types                   DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+Call Type                                     Count % Activity Avg Active
+---------------------------------------- ---------- ---------- ----------
+V8 Bundled Exec                               5,030      33.32       1.40
+LOB/FILE operations                           3,593      23.80       1.00
+PL/SQL RPC                                      534       3.54       0.15
+          -------------------------------------------------------------
+
+
+Top Sessions                     DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+-> '# Samples Active' shows the number of ASH samples in which the session
+      was found waiting for that particular event. The percentage shown
+      in this column is calculated with respect to wall clock time
+      and not total database activity.
+-> 'XIDs' shows the number of distinct transaction IDs sampled in ASH
+      when the session was waiting for that particular event
+-> For sessions running Parallel Queries, this section will NOT aggregate
+      the PQ slave activity into the session issuing the PQ. Refer to
+      the 'Top Sessions running PQs' section for such statistics.
+
+   Sid, Serial# % Activity Event                             % Event
+--------------- ---------- ------------------------------ ----------
+User                 Program                          # Samples Active     XIDs
+-------------------- ------------------------------ ------------------ --------
+      546,53305      23.77 CPU + Wait for CPU                  23.64
+APPS                 STANDARD@mcdda...6 (TNS V1-V3) 3,568/3,600 [ 99%]        7
+
+     1218, 1765      18.73 CPU + Wait for CPU                  17.87
+APPS                 STANDARD@mcdda...6 (TNS V1-V3) 2,697/3,600 [ 75%]        1
+
+      153,29324      14.88 direct path read                    12.96
+APPS                 STANDARD@mcdda...6 (TNS V1-V3) 1,957/3,600 [ 54%]        0
+
+                           CPU + Wait for CPU                   1.72
+                                                      260/3,600 [  7%]        0
+
+     1097,63567       6.98 CPU + Wait for CPU                   6.87
+APPS                 STANDARD@mcdda...6 (TNS V1-V3) 1,037/3,600 [ 29%]       12
+
+     2042,44746       5.75 CPU + Wait for CPU                   5.17
+APPS                 STANDARD@mcdda...6 (TNS V1-V3)   780/3,600 [ 22%]       15
+
+          -------------------------------------------------------------
+
+Top Blocking Sessions            DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                  No data exists for this section of the report.
+          -------------------------------------------------------------
+
+
+Top Sessions running PQs         DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                  No data exists for this section of the report.
+          -------------------------------------------------------------
+
+Top DB Objects                   DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+-> With respect to Application, Cluster, User I/O, buffer busy waits and
+   In-Memory DB events only.
+-> Tablespace name is not available for reports generated from the root PDB
+   of a consolidated database.
+
+      Object ID % Activity Event                             % Event
+--------------- ---------- ------------------------------ ----------
+Object Name (Type)                                    Tablespace
+----------------------------------------------------- --------------------------
+        1857300       6.75 direct path read                     6.74
+XLA.XLA_AE_HEADERS.OFA (TABLE PARTITION)              APPS_TS_TX_DATA
+        1860926       4.55 direct path read                     4.51
+GL.GL_IMPORT_REFERENCES (TABLE)                       APPS_TS_TX_DATA
+        1914857       2.77 read by other session                1.92
+APPLSYS.FND_CONCURRENT_REQUESTS_N7 (INDEX)            APPS_TS_TX_IDX
+        1955437       2.50 direct path write                    1.33
+XMCI.XMCI_TEMP_FA_DIST_U1 (INDEX)                     XMCI_IDX
+        1878906       1.67 db file scattered read               1.67
+XMCI.XMCI_FAR02_T (TABLE)                             XMCI_DATA
+          -------------------------------------------------------------
+
+Top DB Files                     DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+-> With respect to Cluster and User I/O events only.
+
+        File ID % Activity Event                             % Event
+--------------- ---------- ------------------------------ ----------
+File Name                                             Tablespace
+----------------------------------------------------- -------------------------
+           1495       1.46 direct path write                    1.33
+/u03/oradata/erpu1/xmciidx128.dbf                     XMCI_IDX
+
+          -------------------------------------------------------------
+
+Top Latches                      DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+
+                  No data exists for this section of the report.
+          -------------------------------------------------------------
+
+
+Activity Over Time               DB/Inst: ERPU1/erpu1  (Nov 21 18:00 to 19:00)
+-> Analysis period is divided into smaller time slots
+-> Top 3 events are reported in each of those slots
+-> 'Slot Count' shows the number of ASH samples in that slot
+-> 'Event Count' shows the number of ASH samples waiting for
+   that event in that slot
+-> '% Event' is 'Event Count' over all ASH samples in the analysis period
+
+                         Slot                                   Event
+Slot Time (Duration)    Count Event                             Count % Event
+-------------------- -------- ------------------------------ -------- -------
+18:00:00   (6.0 min)    2,613 CPU + Wait for CPU                1,434    9.50
+                              direct path read                    293    1.94
+                              db file async I/O submit            248    1.64
+18:06:00   (6.0 min)    2,163 CPU + Wait for CPU                1,284    8.51
+                              direct path read                    331    2.19
+                              direct path write                   170    1.13
+18:12:00   (6.0 min)    2,322 CPU + Wait for CPU                1,078    7.14
+                              direct path read                    322    2.13
+                              db file scattered read              249    1.65
+18:18:00   (6.0 min)    1,234 CPU + Wait for CPU                  824    5.46
+                              direct path read                    335    2.22
+                              db file sequential read              36    0.24
+18:24:00   (6.0 min)    1,136 CPU + Wait for CPU                  764    5.06
+                              direct path read                    333    2.21
+                              db file sequential read              22    0.15
+18:30:00   (6.0 min)    2,126 CPU + Wait for CPU                1,280    8.48
+                              direct path read                    342    2.27
+                              db file sequential read             164    1.09
+18:36:00   (6.0 min)    1,279 CPU + Wait for CPU                1,084    7.18
+                              direct path read                    117    0.78
+                              cursor: pin S wait on X              30    0.20
+18:42:00   (6.0 min)    1,280 CPU + Wait for CPU                1,105    7.32
+                              db file scattered read               65    0.43
+                              db file async I/O submit             50    0.33
+18:48:00   (6.0 min)      566 CPU + Wait for CPU                  530    3.51
+                              db file async I/O submit             12    0.08
+                              db file sequential read              11    0.07
+18:54:00   (6.0 min)      377 CPU + Wait for CPU                  374    2.48
+                              db file async I/O submit              3    0.02
+          -------------------------------------------------------------
+
+End of Report

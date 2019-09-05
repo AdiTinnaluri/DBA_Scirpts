@@ -1,0 +1,14 @@
+Enter value for dba_performing_task: 
+old 342:         'DBA Executing   : &&DBA_PERFORMING_TASK ' );
+new 342:         'DBA Executing   :  ' );
+DECLARE
+*
+ERROR at line 1:
+ORA-01013: user requested cancel of current operation
+ORA-06512: at line 202
+ORA-06512: at line 345
+
+
+Elapsed: 00:05:46.50
+
+SQL> 

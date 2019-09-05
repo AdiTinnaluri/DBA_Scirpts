@@ -1,0 +1,58 @@
+# $Header: EXP_TAB_cmprss.sh  
+# *====================================================================================+
+# |  Author - DBACLASS ADMIN TEAM 
+# |                                                       |
+# +====================================================================================+
+# |
+# | FILENAME
+# |     EXP_table_bkp_cmprss_dbaclass.sh
+# |
+# | DESCRIPTION
+# |     Daily Export backup script of a list of table
+# | PLATFORM
+# |     Linux/Solaris
+ 
+# +===========================================================================+
+#!/bin/bash
+echo Set Oracle Database Env
+export ORACLE_SID=$1
+export ORACLE_HOME=/app/oracle/product/11.2.0.4
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib
+export PATH=$ORACLE_HOME/bin:$PATH:/usr/local/bin
+export TIMESTAMP=`date +%a%d%b%Y`
+
+$ORACLE_HOME/bin/sqlplus -s "/as sysdba" << EOF 
+CREATE OR REPLACE DIRECTORY PART_DIR AS '/backup_375/$ORACLE_SID/expdp';
+exit
+EOF
+echo ==================
+echo Schemas expdp
+echo ==============
+echo $ORACLE_HOME
+
+$ORACLE_HOME/bin/expdp \'/ as sysdba\'  schemas=${ORACLE_SID}_MDS directory=PART_DIR dumpfile=expdp_${ORACLE_SID}_MDS_`date +%m%d%y`.dmp logfile=expdp_OBI${ORACLE_SID}_MDS_`date +%m%d%y`.log
+$ORACLE_HOME/bin/expdp \'/ as sysdba\' schemas=${ORACLE_SID}_BIPLATFORM directory=PART_DIR dumpfile=expdp_${ORACLE_SID}_BIPLATFORM_`date +%m%d%y`.dmp logfile=expdp_OBI${ORACLE_SID}_BIPLATFORM_`date +%m%d%y`.log
+$ORACLE_HOME/bin/expdp \'/ as sysdba\' schemas=FBI_BIA_ODIREPO directory=PART_DIR dumpfile=expdp_${ORACLE_SID}_FBI_BIA_ODIREPO_`date +%m%d%y`.dmp logfile=expdp_${ORACLE_SID}_FBI_BIA_ODIREPO_`date +%m%d%y`.log  COMPRESSION=ALL
+
+echo ==================
+echo tables expdp
+echo ==================
+
+$ORACLE_HOME/bin/expdp \'/ as sysdba\' tables=SYSTEM.SCHEMA_VERSION_REGISTRY$  directory=PART_DIR dumpfile=expdp_SCHEMA_VERSION_REGISTRY_`date +%m%d%y`.dmp  logfile=expdp_SCHEMA_VERSION_REGISTRY_`date +%m%d%y`.log 
+$ORACLE_HOME/bin/expdp \'/ as sysdba\'  TABLES=FBI_DW.W_LOCALIZED_STRING_G directory=PART_DIR dumpfile=expdp_W_LOCALIZED_STRING_G_`date +%m%d%y`.dmp logfile=expdp_W_LOCALIZED_STRING_G_`date +%m%d%y`.log 
+$ORACLE_HOME/bin/expdp \'/ as sysdba\' TABLES=FBI_DW.WC_SECURITY_G directory=PART_DIR  dumpfile=expdp_WC_SECURITY_G_`date +%m%d%y`.dmp logfile=expdp_WC_SECURITY_G_`date +%m%d%y`.log 
+$ORACLE_HOME/bin/expdp \'/ as sysdba\' TABLES=TREC.TREC_STATUS_MAIL_USERS  directory=PART_DIR  dumpfile=expdp_exp_TREC_STATUS_MAIL_USERS_`date +%m%d%y`.dmp logfile=expdp_TREC_STATUS_MAIL_USERS_`date +%m%d%y`.log 
+$ORACLE_HOME/bin/expdp \'/ as sysdba\' TABLES=STG.RPNA_STATUS_MAIL_USERS  directory=PART_DIR  dumpfile=expdp_RPNA_STATUS_MAIL_USERS_`date +%m%d%y`.dmp logfile=expdp_RPNA_STATUS_MAIL_USERS_`date +%m%d%y`.log
+
+#echo ==================
+#echo For OBID1 . Take below additional schema Backups
+#echo ==================
+#expdp system/pcastart schemas=infm_9 directory=PART_DIR dumpfile=expdp_${ORACLE_SID}_infm_9_`date +%m%d%y`.dmp logfile=expdp_infm_9_`date +%m%d%y`.log
+#expdp system/pcastart schemas=dac_9 directory=PART_DIR dumpfile=expdp_${ORACLE_SID}_dac_9_`date +%m%d%y`.dmp logfile=expdp_dac_9_`date +%m%d%y`.log
+
+ 
+echo SEND MAIL TO STAKE HOLDERS
+echo =======
+mailx -s "$ORACLE_SID $TIMESTAMP Export backups completed " adi.tinnaluri@datavail.com
+echo Export completed at $TIMESTAMP
+exit

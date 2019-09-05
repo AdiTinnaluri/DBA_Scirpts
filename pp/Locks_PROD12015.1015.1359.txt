@@ -1,0 +1,18 @@
+Enter value for dba_performing_task: 
+old 342:         'DBA Executing   : &&DBA_PERFORMING_TASK ' );
+new 342:         'DBA Executing   :  ' );
+*******************************************************************************************************************************
+15-OCT-15 13:59
+Database        : PROD(39632745)
+Host            : PDB301
+Instance        : PROD1(1)
+RBDMS Version   : 10.2.0.4.0
+EBS Version     : 11.5.10.2
+DBA Executing   :
+*******************************************************************************************************************************
+
+No Locks in the DB
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:08.58

@@ -1,0 +1,177 @@
+
+Parameter 1:
+SQL_ID (required)
+
+Enter value for 1: c24ts0vm8j9wj
+
+old   5: WHERE sql_id = TRIM('&&sql_id.')
+new   5: WHERE sql_id = TRIM('c24ts0vm8j9wj')
+old  10: WHERE sql_id = TRIM('&&sql_id.')
+new  10: WHERE sql_id = TRIM('c24ts0vm8j9wj')
+old  16: WHERE sql_id = TRIM('&&sql_id.')
+new  16: WHERE sql_id = TRIM('c24ts0vm8j9wj')
+old  24: WHERE sql_id = TRIM('&&sql_id.')
+new  24: WHERE sql_id = TRIM('c24ts0vm8j9wj')
+     3804127667       6.977                                                                                                       
+     2705174443        8.05                                                                                                       
+     3125795897      35.578                                                                                                       
+     2521608088      37.649                                                                                                       
+     1876574754      40.178                                                                                                       
+     3800967079      43.695                                                                                                       
+     1010359589     121.574                                                                                                       
+     3768044321   15957.054                                                                                                       
+     1363719627   32752.272                                                                                                       
+
+9 rows selected.
+
+
+Parameter 2:
+PLAN_HASH_VALUE (required)
+
+Enter value for 2: 2705174443
+
+Values passed:
+~~~~~~~~~~~~~
+SQL_ID         : "c24ts0vm8j9wj"
+PLAN_HASH_VALUE: "2705174443"
+
+SQL> WHENEVER SQLERROR EXIT SQL.SQLCODE;
+SQL> 
+SQL> VAR sql_text CLOB;
+SQL> VAR other_xml CLOB;
+SQL> EXEC :sql_text := NULL;
+
+PL/SQL procedure successfully completed.
+
+SQL> EXEC :other_xml := NULL;
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> -- get sql_text from memory
+SQL> DECLARE
+  2    l_sql_text VARCHAR2(32767);
+  3  BEGIN -- 10g see bug 5017909
+  4    FOR i IN (SELECT DISTINCT piece, sql_text
+  5  		   FROM gv$sqltext_with_newlines
+  6  		  WHERE sql_id = TRIM('&&sql_id.')
+  7  		  ORDER BY 1, 2)
+  8    LOOP
+  9  	 IF :sql_text IS NULL THEN
+ 10  	   DBMS_LOB.CREATETEMPORARY(:sql_text, TRUE);
+ 11  	   DBMS_LOB.OPEN(:sql_text, DBMS_LOB.LOB_READWRITE);
+ 12  	 END IF;
+ 13  	 l_sql_text := REPLACE(i.sql_text, CHR(00), ' ');
+ 14  	 DBMS_LOB.WRITEAPPEND(:sql_text, LENGTH(l_sql_text), l_sql_text);
+ 15    END LOOP;
+ 16    IF :sql_text IS NOT NULL THEN
+ 17  	 DBMS_LOB.CLOSE(:sql_text);
+ 18    END IF;
+ 19  EXCEPTION
+ 20    WHEN OTHERS THEN
+ 21  	 DBMS_OUTPUT.PUT_LINE('getting sql_text from memory: '||SQLERRM);
+ 22  	 :sql_text := NULL;
+ 23  END;
+ 24  /
+old   6:              WHERE sql_id = TRIM('&&sql_id.')
+new   6:              WHERE sql_id = TRIM('c24ts0vm8j9wj')
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> -- get sql_text from awr
+SQL> BEGIN
+  2    IF :sql_text IS NULL OR NVL(DBMS_LOB.GETLENGTH(:sql_text), 0) = 0 THEN
+  3  	 SELECT REPLACE(sql_text, CHR(00), ' ')
+  4  	   INTO :sql_text
+  5  	   FROM dba_hist_sqltext
+  6  	  WHERE sql_id = TRIM('&&sql_id.')
+  7  	    AND sql_text IS NOT NULL
+  8  	    AND ROWNUM = 1;
+  9    END IF;
+ 10  EXCEPTION
+ 11    WHEN OTHERS THEN
+ 12  	 DBMS_OUTPUT.PUT_LINE('getting sql_text from awr: '||SQLERRM);
+ 13  	 :sql_text := NULL;
+ 14  END;
+ 15  /
+old   6:      WHERE sql_id = TRIM('&&sql_id.')
+new   6:      WHERE sql_id = TRIM('c24ts0vm8j9wj')
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> SELECT :sql_text FROM DUAL;
+---Multiorg/Multilang Ref#20110103-XML Reports  ---                                                                               
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+SELECT     TO_CHAR(                                                                                                               
+                                                                                                                                  
+
+SQL> 
+SQL> -- get other_xml from memory
+SQL> BEGIN
+  2    FOR i IN (SELECT other_xml
+  3  		   FROM gv$sql_plan
+  4  		  WHERE sql_id = TRIM('&&sql_id.')
+  5  		    AND plan_hash_value = TO_NUMBER(TRIM('&&plan_hash_value.'))
+  6  		    AND other_xml IS NOT NULL
+  7  		  ORDER BY
+  8  			child_number, id)
+  9    LOOP
+ 10  	 :other_xml := i.other_xml;
+ 11  	 EXIT; -- 1st
+ 12    END LOOP;
+ 13  EXCEPTION
+ 14    WHEN OTHERS THEN
+ 15  	 DBMS_OUTPUT.PUT_LINE('getting other_xml from memory: '||SQLERRM);
+ 16  	 :other_xml := NULL;
+ 17  END;
+ 18  /
+old   4:              WHERE sql_id = TRIM('&&sql_id.')
+new   4:              WHERE sql_id = TRIM('c24ts0vm8j9wj')
+old   5:                AND plan_hash_value = TO_NUMBER(TRIM('&&plan_hash_value.'))
+new   5:                AND plan_hash_value = TO_NUMBER(TRIM('2705174443'))
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> -- get other_xml from awr
+SQL> BEGIN
+  2    IF :other_xml IS NULL OR NVL(DBMS_LOB.GETLENGTH(:other_xml), 0) = 0 THEN
+  3  	 FOR i IN (SELECT other_xml
+  4  		    FROM dba_hist_sql_plan
+  5  		    WHERE sql_id = TRIM('&&sql_id.')
+  6  		      AND plan_hash_value = TO_NUMBER(TRIM('&&plan_hash_value.'))
+  7  		      AND other_xml IS NOT NULL
+  8  		    ORDER BY
+  9  			  id)
+ 10  	 LOOP
+ 11  	   :other_xml := i.other_xml;
+ 12  	   EXIT; -- 1st
+ 13  	 END LOOP;
+ 14    END IF;
+ 15  EXCEPTION
+ 16    WHEN OTHERS THEN
+ 17  	 DBMS_OUTPUT.PUT_LINE('getting other_xml from awr: '||SQLERRM);
+ 18  	 :other_xml := NULL;
+ 19  END;
+ 20  /
+old   5:                WHERE sql_id = TRIM('&&sql_id.')
+new   5:                WHERE sql_id = TRIM('c24ts0vm8j9wj')
+old   6:                  AND plan_hash_value = TO_NUMBER(TRIM('&&plan_hash_value.'))
+new   6:                  AND plan_hash_value = TO_NUMBER(TRIM('2705174443'))
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> SELECT :other_xml FROM DUAL;
+<other_xml><info type="cardinality_feedback" note="y">yes</info><info type="db                                                    
+_v                                                                                                                                
+                                                                                                                                  
+
+SQL> 
+SQL> -- generates script that creates sql profile in target system:
+SQL> SET ECHO OFF;
+dv_sql_profile_c24ts0vm8j9wj_2705174443.sql.

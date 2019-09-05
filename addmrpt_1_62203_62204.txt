@@ -1,0 +1,841 @@
+          ADDM Report for Task 'TASK_113931'
+          ----------------------------------
+
+Analysis Period
+---------------
+AWR snapshot range from 62203 to 62204.
+Time period starts at 11-JUL-17 01.30.54 AM
+Time period ends at 11-JUL-17 02.00.58 AM
+
+Analysis Target
+---------------
+Database 'ERPP1' with DB ID 3533720355.
+Database version 12.1.0.2.0.
+ADDM performed an analysis of instance erpp1, numbered 1 and hosted at
+mcddallnx428.mcd.com.
+
+Activity During the Analysis Period
+-----------------------------------
+Total database time was 26006 seconds.
+The average number of active sessions was 14.42.
+
+Summary of Findings
+-------------------
+   Description                               Active Sessions      Recommendation
+s
+                                             Percent of Activity
+   ----------------------------------------  -------------------  --------------
+-
+1  Top SQL Statements                        9.06 | 62.84         8
+2  Undersized SGA                            2.27 | 15.77         1
+3  Top Segments by "User I/O" and "Cluster"  2.05 | 14.19         5
+4  PL/SQL Execution                          .53 | 3.68           5
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+          Findings and Recommendations
+          ----------------------------
+
+Finding 1: Top SQL Statements
+Impact is 9.06 active sessions, 62.84% of total activity.
+---------------------------------------------------------
+SQL statements consuming significant database time were found. These
+statements offer a good opportunity for performance improvement.
+
+   Recommendation 1: SQL Tuning
+   Estimated benefit is 1.51 active sessions, 10.44% of total activity.
+   --------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the SELECT statement with SQL_ID
+      "386g1yzqkfgnn".
+      Related Object
+         SQL statement with SQL_ID 386g1yzqkfgnn.
+         SELECT    gcc.segment1  GBL,
+         gcc.segment2  Global_Account,
+         gcc.segment3  Sub_Account,
+         gcc.segment4  Local_Account,
+         gcc.segment5  Company,
+         gcc.segment6  Intercompany,
+         gcc.segment7  Future,
+         Decode(NVL(gjl.accounted_dr,0),0,-1*gjl.accounted_cr*CURRENCY_CONVERS
+         ION_RATE,NVL(gjl.accounted_dr*CURRENCY_CONVERSION_RATE,0)) amount,
+         gjh.DATE_CREATED Entry_Date,
+         gjh.posted_date Post_date,
+         gjs.user_je_source_name  Source,
+         gjc.user_je_category_name  Category,
+         gjl.je_line_num Line,
+         gjl.description  Line_Description,
+         gjh.name Journal,
+         --fu.user_name EID ,
+         fu.user_id EID,
+         null seq_id,
+         null details_review,
+         gcc.code_combination_id CODE_COMBINATION_ID,
+         gjh.currency_code CURRENCY,
+         gjh.je_header_id JE_HEADER_ID,
+         NULL request_id ,
+         gjl.reference_4 reference_4,
+         gjl.reference_5 reference_5
+         FROM     gl_je_headers gjh,
+         gl_je_lines   gjl,
+         gl_code_combinations gcc,
+         gl_je_sources gjs,
+         fnd_user fu,
+         gl_je_batches gjb,
+         gl_je_categories gjc
+         WHERE   1=1
+         AND     gjh.je_header_id = gjl.je_header_id
+         AND     gjl.code_combination_id = gcc.code_combination_id
+         AND     gjh.status = 'P'
+         AND     gjh.je_batch_id=gjb.je_batch_id
+         AND     nvl(UPPER(gjl.description), 'X') != 'INTRACOMPANY BALANCING
+         LINE ADDED BY POSTING'
+         AND     gjh.je_source = gjs.je_source_name
+         AND     gjh.je_category = gjc.je_category_name
+         AND     fu.user_id(+) = gjl.created_by
+         AND     gjl.ledger_id = gjh.ledger_id
+         AND EXISTS
+         (SELECT 'EXISTS'
+         FROM      xmci_ape01_mapper_tbl xmap
+         --WHERE  xmap.lookup_type = 'GL_REPORT_LKP'
+         --Added for ACSP9614849
+         WHERE  xmap.lookup_type = 'GL_REPORT_LKP_GLR048'
+         AND xmap.set_of_books_id = 1001 AND      xmap.orcl_segment1 =
+         UPPER(gjs.user_je_source_name)
+         )
+         AND     gjh.ledger_id =  1001 AND     gcc.CHART_OF_ACCOUNTS_ID =101
+         AND 1 = 1 AND(  gjh.je_source != '2' AND gjl.CREATED_by IN ( SELECT
+         DISTINCT U.USER_ID
+         FROM PER_ALL_ASSIGNMENTS_F A, PER_ALL_PEOPLE_F P, FND_USER U
+         WHERE 1=1
+         AND A.PERSON_ID = P.PERSON_ID
+         AND P.PARTY_ID = U.PERSON_PARTY_ID
+         AND ASSIGNMENT_STATUS_TYPE_ID != 3
+         AND SYSDATE BETWEEN p.effective_start_date and p.effective_end_date
+         AND A.EFFECTIVE_END_DATE = (SELECT MAX (EFFECTIVE_END_DATE)
+         FROM per_all_assignments_f paaf2
+         WHERE paaf2.person_id = A.PERSON_ID
+         AND paaf2.ASSIGNMENT_STATUS_TYPE_ID != 3)
+         START WITH A.PERSON_ID = 1478 CONNECT BY PRIOR A.PERSON_ID =  (
+         SELECT  SUPERVISOR_ID
+         FROM PER_ALL_ASSIGNMENTS_F F
+         WHERE   F.PERSON_ID = A.PERSON_ID
+         AND f.EFFECTIVE_END_DATE = (SELECT MAX (EFFECTIVE_END_DATE)
+         FROM per_all_assignments_f paaf2
+         WHERE paaf2.person_id = F.PERSON_ID
+         AND paaf2.ASSIGNMENT_STATUS_TYPE_ID != 3)
+         AND ROWNUM< 2  ))  )  AND gjh.period_name = 'JUN-17' AND 1 = 1 AND 1
+         = 1 AND (NVL(abs(gjl.accounted_dr),0) >= 75000 OR    --Ver 4.0 added
+         equal to condition
+         NVL(abs(gjl.accounted_cr),0) >= 75000 )
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 0% for SQL execution,
+      0% for parsing, 100% for PL/SQL execution and 0% for Java execution.
+
+   Recommendation 2: SQL Tuning
+   Estimated benefit is 1.51 active sessions, 10.44% of total activity.
+   --------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the SELECT statement with SQL_ID
+      "39777tyn6hpk5".
+      Related Object
+         SQL statement with SQL_ID 39777tyn6hpk5.
+         SELECT    gcc.segment1  GBL,
+         gcc.segment2  Global_Account,
+         gcc.segment3  Sub_Account,
+         gcc.segment4  Local_Account,
+         gcc.segment5  Company,
+         gcc.segment6  Intercompany,
+         gcc.segment7  Future,
+         Decode(NVL(gjl.accounted_dr,0),0,-1*gjl.accounted_cr*CURRENCY_CONVERS
+         ION_RATE,NVL(gjl.accounted_dr*CURRENCY_CONVERSION_RATE,0)) amount,
+         gjh.DATE_CREATED Entry_Date,
+         gjh.posted_date Post_date,
+         gjs.user_je_source_name  Source,
+         gjc.user_je_category_name  Category,
+         gjl.je_line_num Line,
+         gjl.description  Line_Description,
+         gjh.name Journal,
+         --fu.user_name EID ,
+         fu.user_id EID,
+         null seq_id,
+         null details_review,
+         gcc.code_combination_id CODE_COMBINATION_ID,
+         gjh.currency_code CURRENCY,
+         gjh.je_header_id JE_HEADER_ID,
+         NULL request_id ,
+         gjl.reference_4 reference_4,
+         gjl.reference_5 reference_5
+         FROM     gl_je_headers gjh,
+         gl_je_lines   gjl,
+         gl_code_combinations gcc,
+         gl_je_sources gjs,
+         fnd_user fu,
+         gl_je_batches gjb,
+         gl_je_categories gjc
+         WHERE   1=1
+         AND     gjh.je_header_id = gjl.je_header_id
+         AND     gjl.code_combination_id = gcc.code_combination_id
+         AND     gjh.status = 'P'
+         AND     gjh.je_batch_id=gjb.je_batch_id
+         AND     nvl(UPPER(gjl.description), 'X') != 'INTRACOMPANY BALANCING
+         LINE ADDED BY POSTING'
+         AND     gjh.je_source = gjs.je_source_name
+         AND     gjh.je_category = gjc.je_category_name
+         AND     fu.user_id(+) = gjl.created_by
+         AND     gjl.ledger_id = gjh.ledger_id
+         AND EXISTS
+         (SELECT 'EXISTS'
+         FROM      xmci_ape01_mapper_tbl xmap
+         --WHERE  xmap.lookup_type = 'GL_REPORT_LKP'
+         --Added for ACSP9614849
+         WHERE  xmap.lookup_type = 'GL_REPORT_LKP_GLR048'
+         AND xmap.set_of_books_id = 1001 AND      xmap.orcl_segment1 =
+         UPPER(gjs.user_je_source_name)
+         )
+         AND     gjh.ledger_id =  1001 AND     gcc.CHART_OF_ACCOUNTS_ID =101
+         AND 1 = 1 AND(  gjh.je_source != '2' AND gjl.CREATED_by IN ( SELECT
+         DISTINCT U.USER_ID
+         FROM PER_ALL_ASSIGNMENTS_F A, PER_ALL_PEOPLE_F P, FND_USER U
+         WHERE 1=1
+         AND A.PERSON_ID = P.PERSON_ID
+         AND P.PARTY_ID = U.PERSON_PARTY_ID
+         AND ASSIGNMENT_STATUS_TYPE_ID != 3
+         AND SYSDATE BETWEEN p.effective_start_date and p.effective_end_date
+         AND A.EFFECTIVE_END_DATE = (SELECT MAX (EFFECTIVE_END_DATE)
+         FROM per_all_assignments_f paaf2
+         WHERE paaf2.person_id = A.PERSON_ID
+         AND paaf2.ASSIGNMENT_STATUS_TYPE_ID != 3)
+         START WITH A.PERSON_ID = 1478 CONNECT BY PRIOR A.PERSON_ID =  (
+         SELECT  SUPERVISOR_ID
+         FROM PER_ALL_ASSIGNMENTS_F F
+         WHERE   F.PERSON_ID = A.PERSON_ID
+         AND f.EFFECTIVE_END_DATE = (SELECT MAX (EFFECTIVE_END_DATE)
+         FROM per_all_assignments_f paaf2
+         WHERE paaf2.person_id = F.PERSON_ID
+         AND paaf2.ASSIGNMENT_STATUS_TYPE_ID != 3)
+         AND ROWNUM< 2  ))  )  AND gjh.period_name = 'JUN-17' AND 1 = 1 AND 1
+         = 1 AND (NVL(abs(gjl.accounted_dr),0) >= 0 OR    --Ver 4.0 added
+         equal to condition
+         NVL(abs(gjl.accounted_cr),0) >= 0 )
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 0% for SQL execution,
+      0% for parsing, 100% for PL/SQL execution and 0% for Java execution.
+
+   Recommendation 3: SQL Tuning
+   Estimated benefit is 1.51 active sessions, 10.44% of total activity.
+   --------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the INSERT statement with SQL_ID
+      "atdbp93r4u6sp".
+      Related Object
+         SQL statement with SQL_ID atdbp93r4u6sp.
+         INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "APPS"."XMCI_FAR07_RR_V"
+         SELECT * FROM apps.xmci_far07_rr_a_v
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 100% for SQL
+      execution, 0% for parsing, 0% for PL/SQL execution and 0% for Java
+      execution.
+   Rationale
+      I/O and Cluster wait for TABLE "APPS.XMCI_FAR07_RR_V" with object ID
+      2780748 consumed 39% of the database time spent on this SQL statement.
+   Rationale
+      Top level calls to execute the PL/SQL statement with SQL_ID
+      "1cfhz34j5pm5j" are responsible for 100% of the database time spent on
+      the INSERT statement with SQL_ID "atdbp93r4u6sp".
+      Related Object
+         SQL statement with SQL_ID 1cfhz34j5pm5j.
+         BEGIN XMCI_FAR07_RR.MATERIALIZED_VIEW_REFRESH(:errbuf,:rc); END;
+
+   Recommendation 4: SQL Tuning
+   Estimated benefit is 1.25 active sessions, 8.69% of total activity.
+   -------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the INSERT statement with SQL_ID
+      "dwv3h1p4h38pp". Additionally, investigate this statement for possible
+      performance improvements. You can supplement the information given here
+      with an ASH report for this SQL_ID.
+      Related Object
+         SQL statement with SQL_ID dwv3h1p4h38pp.
+         INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "APPS"."XMCI_AR_REPORT_MV"
+         SELECT   papc.class_category, papc.class_code,
+         hlei.lei_information2 state_site, hou.attribute1 gbl,
+         papa.segment1 project_num, 'Franchise' ownership,
+         papa.ORG_ID,
+         --Added By Mayur For Global Functinality
+         NVL
+         (xmci_capital_rep_util.new_rebuild_store_open
+         (papc.class_category,
+         papa.project_id
+         ),
+         ' '
+         ) projected_open_const_comp,
+         NVL
+         (apps.xmci_capital_rep_util.actual_store_open
+         (papc.class_category,
+         papa.project_id
+         ),
+         ' '
+         ) actual_open_const_comp,
+         NVL
+         (SUM
+         (apps.xmci_capital_rep_util.actual_costs
+         (pei.project_burdened_cost,
+         pei.project_id,
+         pei.task_id,
+         pet.expenditure_type_id,
+         pei.expenditure_type,
+         pei.attribute1,
+         pei.attribute2,
+         pei.attribute6,
+         'M',
+         papc.class_code,
+         pei.billable_flag,
+         pei.transferred_from_exp_item_id,
+         pei.expenditure_item_id
+         )
+         ),
+         0
+         ) actual_mcd_cost,
+         NVL
+         (SUM
+         (apps.xmci_capital_rep_util.actual_costs
+         (pei.project_burdened_cost,
+         pei.project_id,
+         pei.task_id,
+         pet.expenditure_type_id,
+         pei.expenditure_type,
+         pei.attribute1,
+         pei.attribute2,
+         pei.attribute6,
+         'F',
+         papc.class_code,
+         pei.billable_flag,
+         pei.transferred_from_exp_item_id,
+         pei.expenditure_item_id
+         )
+         ),
+         0
+         ) actual_franchisee_cost,
+         NVL
+         (TO_NUMBER (apps.xmci_capital_rep_util.mcd_budget (papa.project_id)
+         ),
+         0
+         ) mcd_budget,
+         NVL
+         (TO_NUMBER
+         (apps.xmci_capital_rep_util.franchisee_budget (papa.project_id)
+         ),
+         0
+         ) franchisee_budget,
+         NVL
+         (TO_NUMBER
+         (apps.xmci_capital_rep_util.franchisee_co_investment
+         (papa.project_id)
+         ),
+         0
+         ) co_investment,
+         NVL
+         (SUM
+         (apps.xmci_capital_rep_util.franchisee_cost_not_billed
+         (pei.project_burdened_cost,
+         pei.project_id,
+         pei.task_id,
+         pet.expenditure_type_id,
+         pei.expenditure_type,
+         pei.attribute1,
+         pei.attribute2,
+         pei.attribute6,
+         'F',
+         papc.class_code,
+         pei.billable_flag,
+         pei.transferred_from_exp_item_id,
+         pei.expenditure_item_id
+         )
+         ),
+         0
+         ) franchisee_cost_not_billed,
+         pps.PROJECT_STATUS_NAME as project_status
+         FROM pa_projects_all papa,
+         pa_project_classes papc,
+         hr_organization_units hou,
+         hr_location_extra_info hlei,
+         pa_expenditure_items_all pei,
+         pa_expenditure_types pet,
+         pa_project_customers ppcus,
+         PA_PROJECT_STATUSES pps
+         WHERE papa.project_id = papc.project_id
+         AND papa.carrying_out_organization_id = hou.organization_id
+         AND hou.location_id = hlei.location_id(+)
+         AND hlei.information_type(+) = 'BASIC_SITE_INFORMATION'
+         AND pei.project_id = papa.project_id
+         AND pei.expenditure_type = pet.expenditure_type
+         AND ppcus.project_id = papa.project_id
+         AND ppcus.project_relationship_code = 'F'
+         AND ppcus.last_update_date =
+         (SELECT MAX (last_update_date)
+         FROM pa_project_customers
+         WHERE project_id = papa.project_id
+         AND project_relationship_code <> 'P')
+         AND papc.last_update_date = (SELECT MAX (last_update_date)
+         FROM pa_project_classes
+         WHERE project_id = papa.project_id)
+         AND NOT EXISTS (
+         SELECT 'EXISTS'
+         FROM pa_expenditure_items_all peia2,
+         pa_expenditures_all pea,
+         ap_invoices_all aia
+         WHERE peia2.project_id = pei.project_id
+         AND peia2.task_id = pei.task_id
+         AND peia2.expenditure_item_id = pei.expenditure_item_id
+         AND peia2.expenditure_id = pea.expenditure_id
+         AND pea.orig_exp_txn_reference1 = aia.invoice_id
+         AND aia.cancelled_date IS NOT NULL)
+         and papa.project_status_code  = pps.project_status_code
+         GROUP BY papc.class_category,
+         papc.class_code,
+         hlei.lei_information2,
+         hou.attribute1,
+         papa.segment1,
+         papa.project_id,
+         pps.PROJECT_STATUS_NAME,
+         papa.ORG_ID
+         --Added By Mayur For Global Functinality
+   Rationale
+      The SQL spent 69% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+      Look at data given below and an ASH report for further performance
+      improvements.
+   Rationale
+      Database time for this SQL was divided as follows: 63% for SQL
+      execution, 30% for parsing, 7% for PL/SQL execution and 0% for Java
+      execution.
+   Rationale
+      SQL statement with SQL_ID "dwv3h1p4h38pp" was executed 1 times and had
+      an average elapsed time of 1481 seconds.
+   Rationale
+      Top level calls to execute the PL/SQL statement with SQL_ID
+      "2u3qb0vmbspqv" are responsible for 100% of the database time spent on
+      the INSERT statement with SQL_ID "dwv3h1p4h38pp".
+      Related Object
+         SQL statement with SQL_ID 2u3qb0vmbspqv.
+         BEGIN XMCI_PCAE207_REFRESH_PROCEDURE(:errbuf,:rc,:A0,:A1); END;
+
+   Recommendation 5: SQL Tuning
+   Estimated benefit is 1.24 active sessions, 8.63% of total activity.
+   -------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the SELECT statement with SQL_ID
+      "9z5sh5t5kjajr".
+      Related Object
+         SQL statement with SQL_ID 9z5sh5t5kjajr.
+         SELECT ps . vendor_site_id c_vendor_site_id , ps . vendor_id
+         c_vendor_id_s , ps . vendor_site_code c_site_code , DECODE ( UPPER (
+         : P_ORDER_BY_PAR ) , 'CREATED BY' , UPPER ( fu3 . user_name ) , 'NO
+         SORT' ) C_SORT_CREATED_BY_SITE , DECODE ( UPPER ( : P_ORDER_BY_PAR )
+         , 'LAST UPDATED BY' , UPPER ( fu4 . user_name ) , 'NO SORT' )
+         C_SORT_UPDATED_BY_SITE , DECODE ( : SORT_BY_ALTERNATE , 'Y' , upper (
+         ps . vendor_site_code_alt ) , upper ( ps . vendor_site_code ) )
+         C_SORT_SITE_CODE , ps . address_line1 c_address1 , ps . address_line2
+         c_address2 , ps . address_line3 address3 , to_char ( ps .
+         creation_date , 'DD-MON-YYYY' ) C_CREATION_DATE_SITE , fu3 .
+         user_name C_CREATED_BY_SITE , to_char ( ps . last_update_dt ,
+         'DD-MON-YYYY' ) C_UPDATE_DATE_SITE , fu4 . user_name
+         C_UPDATED_BY_SITE , DECODE ( ps . city , null , null , ps . city )
+         c_city , SUBSTR ( DECODE ( ps . state , null , ps . province || ' ' ,
+         ps . state || ' ' ) || DECODE ( ps . zip , null , null , ps . zip ||
+         ' ' ) || ps . country , 1 , 35 ) c_state_zip_country , NVL ( ps .
+         state , ps . province ) c_state , ps . zip c_zip , ps . country
+         c_country_code , ft . territory_short_name c_country_name , SUBSTR (
+         DECODE ( ps . area_code , null , null , ps . area_code || ' ' ) || ps
+         . phone , 1 , 20 ) c_site_telephone , SUBSTR ( DECODE ( ps .
+         fax_area_code , null , null , ps . fax_area_code || ' ' ) || ps . fax
+         , 1 , 19 ) c_site_fax , t . name c_payment_terms , ps .
+         payment_method_code C_PAYMENT_METHOD , ps . pay_group_lookup_code
+         c_pay_grop_code , ps . payment_priority c_payment_priority , DECODE (
+         ps . pay_site_flag , 'Y' , : C_PAY_SITE || CHR ( 10 ) , null ) ||
+         DECODE ( ps . rfq_only_site_flag , 'Y' , : C_RFQ_ONLY || CHR ( 10 ) ,
+         null ) || DECODE ( ps . purchasing_site_flag , 'Y' , :
+         C_PURCHASING_SITE || CHR ( 10 ) , null ) || DECODE ( ps .
+         pcard_site_flag , 'Y' , : C_PROCUREMENT_CARD || CHR ( 10 ) , null )
+         C_SITE_USES , DECODE ( ps . pay_flag , 'Y' , : C_NLS_YES , : C_NLS_NO
+         ) C_PAY_ALONE , DECODE ( ps . hold_unmatched_invoices_flag , 'Y' , :
+         C_NLS_YES , : C_NLS_NO ) C_MATCHING_REQUIRED , DECODE ( ps .
+         hold_future_payments_flag , 'Y' , : C_NLS_YES , : C_NLS_NO )
+         C_HOLD_FUTURE_PAY , DECODE ( ps . hold_all_payments_flag , 'Y' , :
+         C_NLS_YES , : C_NLS_NO ) C_HOLD_ALL_PAY , DECODE ( SIGN ( NVL ( ps .
+         inactive_date , sysdate + 1 ) - sysdate ) , - 1 , : C_NLS_INACTIVE ,
+         : C_NLS_ACTIVE ) C_SITE_STATUS , UPPER ( hp1 . person_last_name ) ||
+         UPPER ( hp1 . person_first_name ) || UPPER ( hp1 . person_middle_name
+         ) C_SORT_CONTACT_NAME , SUBSTR ( DECODE ( hp1 . person_first_name ,
+         null , null , hp1 . person_first_name || ' ' ) || DECODE ( hp1 .
+         person_middle_name , null , null , hp1 . person_middle_name || ' ' )
+         || hp1 . person_last_name , 1 , 20 ) c_contact_name , pc . title
+         c_position , SUBSTR ( DECODE ( hp . primary_phone_area_code , NULL ,
+         NULL , '(' || hp . primary_phone_area_code || ') ' ) || hp .
+         primary_phone_number , 1 , 20 ) c_contact_telephone , DECODE ( SIGN (
+         NVL ( pc . inactive_date , sysdate + 1 ) - sysdate ) , - 1 , :
+         C_NLS_INACTIVE , : C_NLS_ACTIVE ) C_CONTACT_STATUS , att .
+         tolerance_name C_TOLERANCE_NAME , flan . nls_language C_LANG , ps .
+         vat C_VAT_NUM , ps . pcur C_PAYMENT_CURRENCY_CODE , ps . icur
+         C_INVOICE_CURRENCY_CODE , ps . alternativesupp C_ALTERNATIVE_SUPPLIER
+         , ps . customer_num C_CUSTOMER_NUMBER FROM ( SELECT iepa .
+         exclusive_payment_flag pay_flag , ipm . payment_method_code , hl .
+         language lang , tax . rep_registration_number vat , assa .
+         payment_currency_code pcur , assa . invoice_currency_code icur , assa
+         . address_lines_alt alternativesupp , GREATEST ( nvl ( iepa .
+         last_update_date , assa . last_update_date ) , nvl ( assa .
+         last_update_date , assa . last_update_date ) , nvl ( hl .
+         last_update_date , assa . last_update_date ) , nvl ( ipm .
+         last_update_date , assa . last_update_date ) ) last_update_dt , nvl (
+         DECODE ( GREATEST ( iepa . last_update_date , assa . last_update_date
+         , hl . last_update_date , ipm . last_update_date ) , assa .
+         last_update_date , assa . last_updated_by , iepa . last_update_date ,
+         iepa . last_updated_by , hl . last_update_date , hl . last_updated_by
+         , ipm . last_updated_by ) , assa . last_updated_by ) lst_up_by , assa
+         . * FROM iby_external_payees_all iepa , iby_ext_party_pmt_mthds ipm ,
+         ap_supplier_sites assa , hz_party_sites hps , hz_locations hl ,
+         zx_party_tax_profile tax WHERE 1 = 1 and assa . vendor_site_id = iepa
+         . supplier_site_id (+) and NVL ( iepa . ext_payee_id , 0 ) = nvl (
+         ipm . ext_pmt_party_id (+) , 0 ) and assa . party_Site_id = hps .
+         party_site_id and hl . location_id = hps . location_id and ipm .
+         primary_flag (+) = 'Y' and tax . party_id = assa . party_site_id and
+         tax . party_type_code = 'THIRD_PARTY_SITE' ) ps ,
+         ap_supplier_contacts pc , ap_terms t , hz_parties hp , hz_parties hp1
+         , ap_lookup_codes alc , fnd_user fu3 , fnd_user fu4 ,
+         fnd_territories_vl ft , ap_tolerance_templates att , fnd_languages
+         flan   WHERE ( 1 = 1 AND ps.vendor_site_id = NVL ( pc.vendor_site_id
+         , ps.vendor_site_id ) AND ps.party_site_id = pc.org_party_site_id (+)
+         AND pc.rel_party_id = hp.party_id (+) AND pc.per_party_id =
+         hp1.party_id (+) AND ps.terms_id = t.term_id (+) AND
+         ps.payment_method_lookup_code = alc.lookup_code (+) AND
+         alc.lookup_type (+) = 'PAYMENT METHOD' AND ps.created_by =
+         fu3.user_id (+) AND ps.lst_up_by = fu4.user_id (+) AND ( :
+         p_pay_group_par is null OR : p_pay_group_par =
+         ps.pay_group_lookup_code ) AND NVL ( ps.inactive_date , sysdate + 1 )
+         >= DECODE ( : p_site_status_par , 'Active' , sysdate , NVL (
+         ps.inactive_date , sysdate ) ) AND NVL ( pc.inactive_date , sysdate +
+         1 ) >= DECODE ( : p_contact_status_par , 'Active' , sysdate , NVL (
+         pc.inactive_date , sysdate ) ) AND ps.country = ft.territory_code (+)
+         AND ps.tolerance_id = att.tolerance_id (+) AND flan.language_code (+)
+         = ps.lang AND ( to_date ( to_char ( ps.last_update_dt , 'DD-MON-YYYY'
+         ) , 'DD-MON-YYYY' ) BETWEEN to_date ( '10-JUL-2017' , 'DD-MON-YYYY' )
+         AND to_date ( '11-JUL-2017' , 'DD-MON-YYYY' ) ) ) AND ( :C_VENDOR_ID
+         = ps.vendor_id)  ORDER BY 4 ASC,5 ASC,6 ASC,42 ASC,40 ASC,41 ASC,38
+         ASC,39 ASC,43 ASC
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 100% for SQL
+      execution, 0% for parsing, 0% for PL/SQL execution and 0% for Java
+      execution.
+   Rationale
+      SQL statement with SQL_ID "9z5sh5t5kjajr" was executed 94180 times and
+      had an average elapsed time of 0.015 seconds.
+
+   Recommendation 6: SQL Tuning
+   Estimated benefit is .95 active sessions, 6.59% of total activity.
+   ------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the SELECT statement with SQL_ID
+      "7qt0820nv6gax".
+      Related Object
+         SQL statement with SQL_ID 7qt0820nv6gax.
+         select /*+ DYNAMIC_SAMPLING(0) NO_INDEX(mytab) */ count(*)  from
+         "AP"."AP_PAYMENT_HIST_DISTS"  mytab
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 100% for SQL
+      execution, 0% for parsing, 0% for PL/SQL execution and 0% for Java
+      execution.
+   Rationale
+      SQL statement with SQL_ID "7qt0820nv6gax" was executed 1 times and had
+      an average elapsed time of 1138 seconds.
+   Rationale
+      Top level calls to execute the PL/SQL statement with SQL_ID
+      "6mcpb06rctk0x" are responsible for 100% of the database time spent on
+      the SELECT statement with SQL_ID "7qt0820nv6gax".
+      Related Object
+         SQL statement with SQL_ID 6mcpb06rctk0x.
+         call dbms_space.auto_space_advisor_job_proc (  )
+
+   Recommendation 7: SQL Tuning
+   Estimated benefit is .71 active sessions, 4.9% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the UPDATE statement with SQL_ID
+      "a150vrgc0pr55".
+      Related Object
+         SQL statement with SQL_ID a150vrgc0pr55.
+         UPDATE AP_INVOICES_ALL SET ATTRIBUTE15 = NULL WHERE LAST_UPDATE_DATE
+         < SYSDATE - NVL(FND_PROFILE.VALUE
+         ('XMCI_PCAI05_PROJECT_UPDATE_DAYS'), 3) AND LAST_UPDATE_DATE >
+         NVL(FND_PROFILE.VALUE ('XMCI_R12_UPGRADE_CUTOFF_DATE'), SYSDATE-365)
+         AND ATTRIBUTE15 IS NOT NULL
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 100% for SQL
+      execution, 0% for parsing, 0% for PL/SQL execution and 0% for Java
+      execution.
+   Rationale
+      SQL statement with SQL_ID "a150vrgc0pr55" was executed 9 times and had
+      an average elapsed time of 96 seconds.
+   Rationale
+      Top level calls to execute the PL/SQL statement with SQL_ID
+      "0qpr6a16w3dsx" are responsible for 100% of the database time spent on
+      the UPDATE statement with SQL_ID "a150vrgc0pr55".
+      Related Object
+         SQL statement with SQL_ID 0qpr6a16w3dsx.
+         BEGIN XMCI_APE18_BPM_ORA_INV_INTFC.validate_invoice(:errbuf,:rc);
+         END;
+
+   Recommendation 8: SQL Tuning
+   Estimated benefit is .39 active sessions, 2.68% of total activity.
+   ------------------------------------------------------------------
+   Action
+      Run SQL Tuning Advisor on the SELECT statement with SQL_ID
+      "cw9gx5x32j1ap".
+      Related Object
+         SQL statement with SQL_ID cw9gx5x32j1ap.
+         select /*+ DYNAMIC_SAMPLING(0) NO_INDEX(mytab) */ count(*)  from
+         "AP"."AP_INVOICE_LINES_ALL"  mytab
+   Rationale
+      The SQL spent 100% of its database time on CPU, I/O and Cluster waits.
+      This part of database time may be improved by the SQL Tuning Advisor.
+   Rationale
+      Database time for this SQL was divided as follows: 100% for SQL
+      execution, 0% for parsing, 0% for PL/SQL execution and 0% for Java
+      execution.
+   Rationale
+      Top level calls to execute the PL/SQL statement with SQL_ID
+      "6mcpb06rctk0x" are responsible for 100% of the database time spent on
+      the SELECT statement with SQL_ID "cw9gx5x32j1ap".
+      Related Object
+         SQL statement with SQL_ID 6mcpb06rctk0x.
+         call dbms_space.auto_space_advisor_job_proc (  )
+
+
+Finding 2: Undersized SGA
+Impact is 2.27 active sessions, 15.77% of total activity.
+---------------------------------------------------------
+The SGA was inadequately sized, causing additional I/O or hard parses.
+The value of parameter "sga_target" was "53248 M" during the analysis period.
+
+   Recommendation 1: Database Configuration
+   Estimated benefit is 1.52 active sessions, 10.57% of total activity.
+   --------------------------------------------------------------------
+   Action
+      Increase the size of the SGA by setting the parameter "sga_target" to
+      59904 M.
+
+   Symptoms That Led to the Finding:
+   ---------------------------------
+      Wait class "User I/O" was consuming significant database time.
+      Impact is 3.7 active sessions, 25.69% of total activity.
+      Hard parsing of SQL statements was consuming significant database time.
+      Impact is .32 active sessions, 2.21% of total activity.
+
+
+Finding 3: Top Segments by "User I/O" and "Cluster"
+Impact is 2.05 active sessions, 14.19% of total activity.
+---------------------------------------------------------
+Individual database segments responsible for significant "User I/O" and
+"Cluster" waits were found.
+
+   Recommendation 1: Segment Tuning
+   Estimated benefit is .59 active sessions, 4.11% of total activity.
+   ------------------------------------------------------------------
+   Action
+      Run "Segment Advisor" on TABLE "AP.AP_PAYMENT_HIST_DISTS" with object ID
+      1866165.
+      Related Object
+         Database object with ID 1866165.
+   Action
+      Investigate application logic involving I/O on TABLE
+      "AP.AP_PAYMENT_HIST_DISTS" with object ID 1866165.
+      Related Object
+         Database object with ID 1866165.
+   Action
+      Look at the "Top SQL Statements" finding for SQL statements consuming
+      significant I/O on this segment. For example, the SELECT statement with
+      SQL_ID "7qt0820nv6gax" is responsible for 100% of "User I/O" and
+      "Cluster" waits for this segment.
+   Rationale
+      The I/O usage statistics for the object are: 2 full object scans,
+      12515310 physical reads, 8 physical writes and 0 direct reads.
+
+   Recommendation 2: Segment Tuning
+   Estimated benefit is .52 active sessions, 3.64% of total activity.
+   ------------------------------------------------------------------
+   Action
+      Run "Segment Advisor" on TABLE "AP.AP_INVOICES_ALL" with object ID
+      1859129.
+      Related Object
+         Database object with ID 1859129.
+   Action
+      Investigate application logic involving I/O on TABLE
+      "AP.AP_INVOICES_ALL" with object ID 1859129.
+      Related Object
+         Database object with ID 1859129.
+   Action
+      Look at the "Top SQL Statements" finding for SQL statements consuming
+      significant I/O on this segment. For example, the UPDATE statement with
+      SQL_ID "a150vrgc0pr55" is responsible for 100% of "User I/O" and
+      "Cluster" waits for this segment.
+   Rationale
+      The I/O usage statistics for the object are: 20 full object scans,
+      14848801 physical reads, 8 physical writes and 8460333 direct reads.
+
+   Recommendation 3: Segment Tuning
+   Estimated benefit is .35 active sessions, 2.45% of total activity.
+   ------------------------------------------------------------------
+   Action
+      Investigate application logic involving I/O on TABLE
+      "PA.PA_EXPENDITURE_ITEMS_ALL" with object ID 1873695.
+      Related Object
+         Database object with ID 1873695.
+   Action
+      Look at the "Top SQL Statements" finding for SQL statements consuming
+      significant I/O on this segment. For example, the INSERT statement with
+      SQL_ID "dwv3h1p4h38pp" is responsible for 100% of "User I/O" and
+      "Cluster" waits for this segment.
+   Rationale
+      The I/O usage statistics for the object are: 2 full object scans,
+      1318887 physical reads, 6728 physical writes and 356246 direct reads.
+
+   Recommendation 4: Segment Tuning
+   Estimated benefit is .33 active sessions, 2.29% of total activity.
+   ------------------------------------------------------------------
+   Action
+      Investigate application logic involving I/O on TABLE
+      "APPS.XMCI_FAR07_RR_V" with object ID 2780748.
+      Related Object
+         Database object with ID 2780748.
+   Action
+      Look at the "Top SQL Statements" finding for SQL statements consuming
+      significant I/O on this segment. For example, the INSERT statement with
+      SQL_ID "atdbp93r4u6sp" is responsible for 100% of "User I/O" and
+      "Cluster" waits for this segment.
+   Rationale
+      The I/O usage statistics for the object are: 0 full object scans, 885580
+      physical reads, 878121 physical writes and 0 direct reads.
+
+   Recommendation 5: Segment Tuning
+   Estimated benefit is .25 active sessions, 1.7% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Run "Segment Advisor" on TABLE "AP.AP_INVOICE_LINES_ALL" with object ID
+      1866681.
+      Related Object
+         Database object with ID 1866681.
+   Action
+      Investigate application logic involving I/O on TABLE
+      "AP.AP_INVOICE_LINES_ALL" with object ID 1866681.
+      Related Object
+         Database object with ID 1866681.
+   Action
+      Look at the "Top SQL Statements" finding for SQL statements consuming
+      significant I/O on this segment. For example, the SELECT statement with
+      SQL_ID "cw9gx5x32j1ap" is responsible for 100% of "User I/O" and
+      "Cluster" waits for this segment.
+
+   Symptoms That Led to the Finding:
+   ---------------------------------
+      Wait class "User I/O" was consuming significant database time.
+      Impact is 3.7 active sessions, 25.69% of total activity.
+
+
+Finding 4: PL/SQL Execution
+Impact is .53 active sessions, 3.68% of total activity.
+-------------------------------------------------------
+PL/SQL execution consumed significant database time.
+
+   Recommendation 1: SQL Tuning
+   Estimated benefit is .14 active sessions, .99% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Tune the entry point PL/SQL
+      "APPS.XMCI_PCA_DISC_REPORT.PCA_INSERT_PROJECT_DETAILS" of type "PACKAGE"
+      and ID 271334. Refer to the PL/SQL documentation for addition
+      information.
+
+   Recommendation 2: SQL Tuning
+   Estimated benefit is .13 active sessions, .93% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Tune the entry point PL/SQL
+      "APPS.XMCI_PROJ_RESOURCE_DTLS_PKG.POPULATE_TABLE" of type "PACKAGE" and
+      ID 273863. Refer to the PL/SQL documentation for addition information.
+   Rationale
+      182 seconds spent in executing PL/SQL
+      "APPS.XMCI_PCAE10_CAPBILL_EXT_PKG.FETCHSPLITQUANTITY1" of type "PACKAGE"
+      and ID 271324.
+
+   Recommendation 3: SQL Tuning
+   Estimated benefit is .11 active sessions, .76% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Tune the entry point PL/SQL "APPS.PA_PROJ_ACCUM_MAIN.PROJ_REFRESH" of
+      type "PACKAGE" and ID 255824. Refer to the PL/SQL documentation for
+      addition information.
+
+   Recommendation 4: SQL Tuning
+   Estimated benefit is .09 active sessions, .64% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Tune the entry point PL/SQL "APPS.XMCI_PCAE207_REFRESH_PROCEDURE" of
+      type "PROCEDURE" and ID 281314. Refer to the PL/SQL documentation for
+      addition information.
+
+   Recommendation 5: SQL Tuning
+   Estimated benefit is .05 active sessions, .35% of total activity.
+   -----------------------------------------------------------------
+   Action
+      Tune the entry point PL/SQL "SYS.DBMS_SPACE_ADMIN.SEGMENT_NUMBER_BLOCKS"
+      of type "PACKAGE" and ID 4928. Refer to the PL/SQL documentation for
+      addition information.
+   Rationale
+      91 seconds spent in executing PL/SQL
+      "SYS.DBMS_SPACE_ADMIN.SEGMENT_NUMBER_BLOCKS" of type "PACKAGE" and ID
+      4928.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          Additional Information
+          ----------------------
+
+Miscellaneous Information
+-------------------------
+Wait class "Application" was not consuming significant database time.
+Wait class "Commit" was not consuming significant database time.
+Wait class "Concurrency" was not consuming significant database time.
+Wait class "Configuration" was not consuming significant database time.
+CPU was not a bottleneck for the instance.
+Wait class "Network" was not consuming significant database time.
+Session connect and disconnect calls were not consuming significant database
+time.
+
+The database's maintenance windows were active during 96% of the analysis
+period.
+
+
